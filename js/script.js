@@ -286,10 +286,29 @@ function initAssignmentModal() {
           <h4>Core Technologies</h4>
           <p>${data.technologies.map(t => `<span class="hl-tag" style="display:inline-block; margin: 2px;">${t}</span>`).join('')}</p>
           <h4>Key Verification Commands</h4>
-          <ul>
-            ${data.commands.map(c => `<li><code>${c}</code></li>`).join('')}
-          </ul>
+          <div class="commands-list">
+            ${data.commands.map(c => `
+              <div class="command-item">
+                <span class="cmd-code">${escapeHtml(c)}</span>
+                <button type="button" class="copy-cmd-btn" data-clipboard="${escapeHtml(c)}">Copy</button>
+              </div>
+            `).join('')}
+          </div>
         `;
+
+        // Attach copy-to-clipboard handlers to command buttons
+        modalBody.querySelectorAll('.copy-cmd-btn').forEach(copyBtn => {
+          copyBtn.addEventListener('click', () => {
+            const textToCopy = copyBtn.getAttribute('data-clipboard');
+            navigator.clipboard.writeText(textToCopy).then(() => {
+              showToast('Command copied to clipboard!');
+              copyBtn.textContent = 'Copied!';
+              setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1800);
+            }).catch(() => {
+              showToast('Command ready: ' + textToCopy);
+            });
+          });
+        });
 
         modalManualLink.setAttribute('href', data.manual);
         modalPdfLink.setAttribute('href', data.pdf);
@@ -387,14 +406,28 @@ function initContactForm() {
       form.reset();
     }
   });
+}
 
-  function escapeHtml(str) {
-    return str.replace(/[&<>'"]/g, tag => ({
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      "'": '&#39;',
-      '"': '&quot;'
-    }[tag] || tag));
-  }
+/* --------------------------------------------------------------------------
+   7. Utility Helpers: Toast Notifications & HTML Escaping
+   -------------------------------------------------------------------------- */
+function showToast(message) {
+  const toast = document.getElementById('toastNotification');
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2500);
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/[&<>'"]/g, tag => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    "'": '&#39;',
+    '"': '&quot;'
+  }[tag] || tag));
 }
