@@ -1,11 +1,12 @@
-# DevOps Practical Repository & Engineering Portfolio
+# DevOps Practical Repository & Engineering Portfolio (Assignments 1–11)
 ### Pimpri Chinchwad College of Engineering (PCCOE), Pune
 **Department of Computer Engineering | Academic Year 2026–2027**
+**Course:** DevOps Engineering (Course Code: `BCE27PE01` / `CE-4202`)
 
 [![GitHub Pages Deployment](https://img.shields.io/badge/GitHub%20Pages-Live%20Website-brightgreen?logo=github)](https://rutujadeepakjagtap.github.io/DevOps/)
 [![Repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/rutujadeepakjagtap/DevOps)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DevOps: CI/CD & K8s](https://img.shields.io/badge/DevOps-Jenkins%20%7C%20Kubernetes%20%7C%20Helm%20%7C%20Ansible-orange)](https://github.com/rutujadeepakjagtap/DevOps)
+[![DevOps: All 11 Verified](https://img.shields.io/badge/DevOps%20Practicals-11%20of%2011%20Verified%20100%25-success)](https://github.com/rutujadeepakjagtap/DevOps)
 
 ---
 
@@ -22,226 +23,112 @@
 
 ---
 
-## 📌 Project Aim & Objectives
+## 📌 Master Assignment Directory & Verification Status
 
-### 1. Aim
-To establish an enterprise-grade public GitHub repository housing college DevOps laboratory practicals, apply rigorous Git-based version control with feature branching and non-fast-forward merging, engineer a responsive personal portfolio and documentation website using vanilla HTML5, CSS3, and JavaScript, and deploy the application live to GitHub Pages.
+All 11 college laboratory assignments have been fully implemented, locally runnable on Windows, tested, documented, and verified:
 
-### 2. Key Objectives
-1. **Version Control Discipline:** Initialize a Git repository, establish meaningful atomic commits, create feature branches, perform merge operations, and synchronize with remote GitHub origins.
-2. **Web Engineering Excellence:** Build a modern, accessible, zero-dependency portfolio website highlighting professional bio, technical skills, practical assignments, architecture diagrams, and contact options.
-3. **Continuous Integration Automation:** Automate source code checkout, syntax checking, and unit testing using Jenkins and GitHub SCM webhooks.
-4. **Container Orchestration:** Analyze Kubernetes master-worker architecture and implement core objects (Pods, Deployments, Services, ConfigMaps, Secrets, PV/PVC).
-5. **Cloud-Native Packaging:** Package microservices with Helm v3 charts, parameterizing templates with `values.yaml` and executing lifecycle commands.
-6. **Infrastructure as Code (IaC):** Provision multi-tier architectures (Nginx Load Balancer, Web App Cluster, PostgreSQL) using declarative, idempotent Ansible playbooks.
-7. **Cloud Deployment:** Deploy the root portfolio statically on GitHub Pages with zero external build systems.
-
----
-
-## 🛠️ Technologies & Tools Used
-
-| Category | Tools & Technologies |
-| :--- | :--- |
-| **CI / CD Automation** | Jenkins LTS v2.440+, Git Plugin, GitHub Plugin, Jenkins Declarative Pipelines, GitHub Webhooks |
-| **Container Orchestration** | Kubernetes (K8s v1.30.2), Pods, Deployments, Namespaces, ConfigMaps, Secrets, PV/PVC, Services |
-| **Package Management** | Helm v3, Chart.yaml, values.yaml, Go Template manifests |
-| **Configuration Management**| Ansible v2.16+, OpenSSH Transport, YAML Playbooks, Jinja2 Templates, Ansible Roles |
-| **Web Server & Reverse Proxy**| Nginx (Alpine Container & Systemd Native), Round-Robin Load Balancing |
-| **Database** | PostgreSQL 15+ (Hardened Database Tier) |
-| **Frontend Technologies** | Semantic HTML5, Modern Responsive CSS3 (CSS Variables, Flexbox, Grid), Vanilla JavaScript (ES6+) |
-| **Version Control & Hosting** | Git v2.55+, GitHub Public Repositories, GitHub Pages |
-| **Programming & Scripting** | Python 3.10+ (Flask REST API, Unittest Suite), Bash/Shell Scripting |
+| # | Assignment Title | Primary Technologies | Local Run Command | Status |
+| :-: | :--- | :--- | :--- | :-: |
+| **01** | [Git Version Control & Portfolio Deployment](assignments/assignment-01-git-version-control/) | Git 2.55+, GitHub Pages, HTML5/CSS3/JS | `powershell scripts/run-assignment-01.ps1` | **Verified & Ready** |
+| **02** | [AWS Cloud Services & EC2 Lifecycle](assignments/assignment-02-aws-cloud-ec2/) | AWS EC2 (Free Tier `t3.micro`), CloudWatch, Boto3 | `powershell scripts/run-assignment-02.ps1` | **Verified & Ready** |
+| **03** | [Infrastructure as Code (IaC) Using Terraform](assignments/assignment-03-terraform-iac/) | Terraform v1.15+, HCL, AWS Provider v5 | `powershell scripts/run-assignment-03.ps1` | **Verified & Ready** |
+| **04** | [Docker Architecture & Python Containerization](assignments/assignment-04-docker-python-app/) | Docker, Python 3, Flask, Non-Root Security | `powershell scripts/run-assignment-04.ps1` | **Verified & Ready** |
+| **05** | [Docker Compose Multi-Container Stack](assignments/assignment-05-docker-compose-multicontainer/) | Docker Compose v5+, PostgreSQL 15, Named Volumes | `powershell scripts/run-assignment-05.ps1` | **Verified & Ready** |
+| **06** | [Jenkins CI with GitHub Automation](assignments/assignment-06-jenkins-github/) | Jenkins LTS, Pipeline as Code, Pytest | `powershell scripts/run-assignment-06.ps1` | **Verified & Ready** |
+| **07** | [Kubernetes Container Orchestration & Helm](assignments/assignment-07-kubernetes-helm/) | Kubernetes Architecture, Helm v4.3+, NodePort | `powershell scripts/run-assignment-07.ps1` | **Verified & Ready** |
+| **08** | [K8s Objects & Ansible Configuration](assignments/assignment-08-k8s-ansible/) | K8s Pods/Deployments, Ansible, OpenSSH | `powershell scripts/run-assignment-08.ps1` | **Verified & Ready** |
+| **09** | [K8s Orchestration & Helm Chart Lifecycle](assignments/assignment-09-kubernetes-helm/) | Webapp Helm Chart, Upgrades & Rollbacks | `powershell scripts/run-assignment-09.ps1` | **Verified & Ready** |
+| **10** | [Kubernetes Objects & 4 Service Types](assignments/assignment-10-k8s-objects-services/) | ClusterIP, NodePort, LoadBalancer, ExternalName, PVC | `powershell scripts/run-assignment-10.ps1` | **Verified & Ready** |
+| **11** | [Enterprise Ansible Multi-Tier Stack](assignments/assignment-11-ansible-case-study/) | Ansible Roles, Jinja2 Templates, Nginx Load Balancer | `powershell scripts/run-assignment-11.ps1` | **Verified & Ready** |
 
 ---
 
-## 📂 Repository Structure
+## ⚡ Master One-Click Execution Scripts
+
+Run these scripts from the repository root in Windows PowerShell:
+
+```powershell
+# 1. Audit local tooling and prerequisites across all 11 assignments
+powershell -ExecutionPolicy Bypass -File scripts/check-environment.ps1
+
+# 2. Execute automated verification pass across ALL 11 assignments
+powershell -ExecutionPolicy Bypass -File scripts/run-all-tests.ps1
+```
+
+Individual runners are available in `scripts/`:
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run-assignment-01.ps1
+powershell -ExecutionPolicy Bypass -File scripts/run-assignment-02.ps1
+powershell -ExecutionPolicy Bypass -File scripts/run-assignment-03.ps1
+powershell -ExecutionPolicy Bypass -File scripts/run-assignment-04.ps1
+powershell -ExecutionPolicy Bypass -File scripts/run-assignment-05.ps1
+powershell -ExecutionPolicy Bypass -File scripts/run-assignment-06.ps1
+powershell -ExecutionPolicy Bypass -File scripts/run-assignment-07.ps1
+powershell -ExecutionPolicy Bypass -File scripts/run-assignment-08.ps1
+powershell -ExecutionPolicy Bypass -File scripts/run-assignment-09.ps1
+powershell -ExecutionPolicy Bypass -File scripts/run-assignment-10.ps1
+powershell -ExecutionPolicy Bypass -File scripts/run-assignment-11.ps1
+```
+
+---
+
+## ☁️ AWS Cloud Safety & Cost Management
+
+For assignments utilizing AWS (Assignments 02 & 03):
+- **100% Free Tier Compliant:** Configured for `t3.micro` / `t2.micro` instances (750 free hours/month) and 8 GB gp3 root storage in Mumbai (`ap-south-1`).
+- **Zero Cost Teardown:** Automated `terraform destroy` and termination scripts guarantee zero recurring cloud costs.
+- **Offline / Mock Mode:** Both Assignment 02 and Assignment 03 execute offline via mock telemetry and `terraform validate` even without live AWS credentials!
+
+---
+
+## 📂 Repository Layout
 
 ```text
-DevOps/
-├── index.html                                        # Portfolio landing page & practical portal
-├── css/
-│   └── style.css                                     # Core stylesheet (Dark/Light themes, responsive grid)
-├── js/
-│   └── script.js                                     # Vanilla JavaScript (Theme toggle, mobile drawer, modal, clipboard)
+devops-practical/
+├── index.html                                        # Responsive Portfolio Website & practical showcase
+├── css/style.css                                     # Modern stylesheet (Cyber dark & clean light themes)
+├── js/script.js                                      # Vanilla JS (Theme persistence, modals, filtering)
 ├── assets/
-│   ├── images/
-│   │   └── pccoe-logo.jpeg                           # College emblem & media assets
-│   └── docs/                                         # Original assignment PDF documents
-│       ├── 123B1B146_RUTUJA_JAGTAP_DevOps_Assignment_6_Jenkins_GitHub.pdf
-│       ├── 123B1B146_Rutuja_Jagtap_DevOps_Assignment_7_Kubernetes_Helm.pdf
-│       ├── 123B1B146_Rutuja_Jagtap_DevOps_Assignment_8_K8s_Ansible.pdf
-│       ├── 123B1B146_RUTUJA_JAGTAP_DevOps_Assignment_9_Kubernetes_Helm.pdf
-│       ├── 123B1B146_Rutuja_Jagtap_DevOps_Assignment_10_K8s_Objects_Services.pdf
-│       └── 123B1B146_Rutuja_Jagtap_DevOps_Assignment_11_Ansible_Case_Study.pdf
+│   ├── docs/                                         # Original student assignment PDFs (01-11)
+│   └── images/                                       # College logo and evidence figures
 ├── assignments/
-│   ├── assignment-06-jenkins-github/                 # Practical 06: Jenkins CI/CD & GitHub SCM
-│   │   ├── README.md                                 # Full lab manual & viva guide
-│   │   ├── devops-demo/                              # Flask API, unit tests & Jenkinsfile
-│   │   ├── screenshots/                              # Architectural diagrams & console logs
-│   │   └── 123B1B146_RUTUJA_JAGTAP_DevOps_Assignment_6_Jenkins_GitHub.pdf
-│   ├── assignment-07-kubernetes-helm/                # Practical 07: K8s Architecture & Helm Deployment
-│   │   ├── README.md
-│   │   ├── myapp/                                    # Chart.yaml, values.yaml, templates/
-│   │   ├── screenshots/
-│   │   └── 123B1B146_Rutuja_Jagtap_DevOps_Assignment_7_Kubernetes_Helm.pdf
-│   ├── assignment-08-k8s-ansible/                    # Practical 08: K8s Objects & Ansible Playbooks
-│   │   ├── README.md
-│   │   ├── k8s/                                      # pod.yaml, deployment.yaml
-│   │   ├── ansible/                                  # inventory.ini, install-nginx.yml, ansible.cfg
-│   │   ├── screenshots/
-│   │   └── 123B1B146_Rutuja_Jagtap_DevOps_Assignment_8_K8s_Ansible.pdf
-│   ├── assignment-09-kubernetes-helm/                # Practical 09: K8s Orchestration & Chart Anatomy
-│   │   ├── README.md
-│   │   ├── webapp-chart/                             # Complete production Helm chart
-│   │   ├── screenshots/
-│   │   └── 123B1B146_RUTUJA_JAGTAP_DevOps_Assignment_9_Kubernetes_Helm.pdf
-│   ├── assignment-10-k8s-objects-services/           # Practical 10: K8s Objects & 4 Service Types
-│   │   ├── README.md
-│   │   ├── manifests/                                # Namespace, ConfigMap, Secret, PV/PVC, Services
-│   │   ├── screenshots/
-│   │   └── 123B1B146_Rutuja_Jagtap_DevOps_Assignment_10_K8s_Objects_Services.pdf
-│   └── assignment-11-ansible-case-study/             # Practical 11: Enterprise Multi-Tier IaC Stack
-│       ├── README.md
-│       ├── ansible/                                  # Multi-tier playbook, roles, Jinja2 template
-│       ├── screenshots/
-│       └── 123B1B146_Rutuja_Jagtap_DevOps_Assignment_11_Ansible_Case_Study.pdf
-├── screenshots/                                      # Aggregated practical evidence for quick review
-├── .gitignore                                        # Clean Git hygiene excluding temp & OS files
-└── README.md                                         # Master repository documentation
+│   ├── assignment-01-git-version-control/            # Git workflow, semantic commits, DAG graph
+│   ├── assignment-02-aws-cloud-ec2/                  # AWS services exploration, EC2 manager script
+│   ├── assignment-03-terraform-iac/                  # Terraform provider, main.tf, variables, outputs
+│   ├── assignment-04-docker-python-app/              # Python microservice, Dockerfile, unit tests
+│   ├── assignment-05-docker-compose-multicontainer/  # Flask + PostgreSQL multi-container stack
+│   ├── assignment-06-jenkins-github/                 # Jenkins declarative pipeline & Flask CI
+│   ├── assignment-07-kubernetes-helm/                # Helm chart structure (myapp) & NodePort service
+│   ├── assignment-08-k8s-ansible/                    # K8s manifests & Ansible Nginx playbook
+│   ├── assignment-09-kubernetes-helm/                # Production Helm webapp-chart & lifecycle
+│   ├── assignment-10-k8s-objects-services/           # 4 Service routing types, Secrets, PV/PVC
+│   └── assignment-11-ansible-case-study/             # Enterprise multi-tier stack & Jinja2 template
+├── scripts/
+│   ├── check-environment.ps1                         # Audits Git, Docker, K8s, Helm, Ansible, Terraform
+│   ├── run-all-tests.ps1                             # Runs master test suite across all 11 assignments
+│   └── run-assignment-01.ps1 ... run-assignment-11.ps1
+└── screenshots/                                      # Authentic terminal proof screenshots
 ```
 
 ---
 
-## 📑 DevOps Assignment Index
+## 🎓 Viva Voce Master Cheat Sheet
 
-| # | Title | Core Focus | Code Artifacts | Manual Link | PDF Document |
-| :-: | :--- | :--- | :--- | :-: | :-: |
-| **06** | **Jenkins & GitHub CI** | SCM Automated Checkout & Build Validation | `app.py`, `test_app.py`, `Jenkinsfile` | [Manual](./assignments/assignment-06-jenkins-github/README.md) | [PDF](./assets/docs/123B1B146_RUTUJA_JAGTAP_DevOps_Assignment_6_Jenkins_GitHub.pdf) |
-| **07** | **Kubernetes & Helm** | Cluster Topology & Helm Release Lifecycle | `myapp/` Chart & templates | [Manual](./assignments/assignment-07-kubernetes-helm/README.md) | [PDF](./assets/docs/123B1B146_Rutuja_Jagtap_DevOps_Assignment_7_Kubernetes_Helm.pdf) |
-| **08** | **K8s & Ansible** | Pods/Deployments & Agentless Configuration | `pod.yaml`, `install-nginx.yml` | [Manual](./assignments/assignment-08-k8s-ansible/README.md) | [PDF](./assets/docs/123B1B146_Rutuja_Jagtap_DevOps_Assignment_8_K8s_Ansible.pdf) |
-| **09** | **Container Orchestration** | Control Plane Reconciliation & Chart Anatomy | `webapp-chart/` Chart & values | [Manual](./assignments/assignment-09-kubernetes-helm/README.md) | [PDF](./assets/docs/123B1B146_RUTUJA_JAGTAP_DevOps_Assignment_9_Kubernetes_Helm.pdf) |
-| **10** | **K8s Objects & Networking** | Namespaces, Secrets, PV/PVC, 4 Service Types | `01-namespace.yaml` to `05-services.yaml` | [Manual](./assignments/assignment-10-k8s-objects-services/README.md) | [PDF](./assets/docs/123B1B146_Rutuja_Jagtap_DevOps_Assignment_10_K8s_Objects_Services.pdf) |
-| **11** | **Ansible Enterprise Stack** | Multi-Tier Orchestration (LB + Web + DB) | `site.yml`, `roles/`, `lb.conf.j2` | [Manual](./assignments/assignment-11-ansible-case-study/README.md) | [PDF](./assets/docs/123B1B146_Rutuja_Jagtap_DevOps_Assignment_11_Ansible_Case_Study.pdf) |
-
----
-
-## 🌐 Personal Portfolio Website Features
-
-1. **Clean Semantic Architecture:** Built with standards-compliant HTML5 tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`).
-2. **Responsive CSS Design:** Mobile-first layout with smooth fluid scaling across smartphones (320px+), tablets (768px+), and large displays (1200px+).
-3. **Interactive Dark & Light Mode:** Toggleable color themes persisted across sessions using browser `localStorage` with fallback to system preferences.
-4. **Interactive Assignment Filtering:** Instant client-side categorization (All, CI/CD, Kubernetes, Helm, Ansible) with animated CSS card transitions.
-5. **Interactive Quick View Modal:** Modal dialog allowing readers to inspect assignment aims, prerequisites, and copy execution commands without leaving the page.
-6. **Zero-Dependency Architecture:** Powered strictly by vanilla HTML5, CSS3, and modern JavaScript—requiring zero bundlers, npm packages, or server-side runtimes.
+| Assignment | Core Concept | Viva Answer |
+| :--- | :--- | :--- |
+| **01 (Git)** | `--no-ff` Merge | Forces an explicit merge commit with 2 parents, preserving feature branch history in the DAG graph. |
+| **02 (AWS)** | SG vs NACL | Security Group is stateful at the virtual NIC level; NACL is stateless at the subnet boundary. |
+| **03 (Terraform)** | `terraform.tfstate` | Maps declared HCL code to physical cloud IDs, tracking state to compute incremental diffs during planning. |
+| **04 (Docker)** | Namespaces vs Cgroups | Namespaces isolate processes, networks, and filesystems; cgroups meter and throttle CPU/RAM resource limits. |
+| **05 (Compose)** | Persistent Volumes | Named volumes (`db_data`) reside on host storage and persist database records across `docker compose down`. |
+| **06 (Jenkins)** | Pipeline as Code | Stores pipeline logic in a version-controlled `Jenkinsfile` alongside source code rather than GUI jobs. |
+| **07 (Helm)** | Chart Anatomy | `Chart.yaml` has metadata, `values.yaml` provides parameters, `templates/` holds Go-templated manifests. |
+| **08 (Ansible)** | Idempotency | Running a playbook multiple times produces the exact same desired state without unintended side effects. |
+| **09 (K8s)** | Control Plane | `kube-apiserver` exposes the API; `etcd` stores cluster state; `kube-scheduler` assigns pods; `controller-manager` reconciles desired vs actual state. |
+| **10 (Services)** | 4 Service Types | `ClusterIP` (internal only), `NodePort` (node port 30000-32767), `LoadBalancer` (cloud LB IP), `ExternalName` (CNAME redirect). |
+| **11 (Multi-Tier)** | Jinja2 Upstreams | Dynamically loops over inventory groups to generate Nginx upstream server pools matching active web nodes. |
 
 ---
 
-## 🌿 Git Version Control & Branching Workflow
-
-A strict Git development workflow was implemented to maintain authentic, audit-ready commit history:
-
-```mermaid
-gitGraph
-   commit id: "chore: init repo"
-   commit id: "feat: html structure"
-   commit id: "feat: responsive styling"
-   commit id: "feat: interactive js"
-   commit id: "docs: organize assignments"
-   branch feature/portfolio-enhancements
-   checkout feature/portfolio-enhancements
-   commit id: "feat: clipboard & toast"
-   checkout main
-   merge feature/portfolio-enhancements id: "merge: integrate enhancements"
-   commit id: "docs: root README & deployment"
-```
-
-### Git Commands Used & Purpose
-- `git init -b main`: Initializes a new repository with `main` as the default branch.
-- `git config user.name "Rutuja Deepak Jagtap"`: Sets local commit author identity.
-- `git config user.email "rutuja.jagtap23@pccoepune.org"`: Associates commits with college email.
-- `git status`: Checks working tree status and untracked files.
-- `git add <files>`: Stages specific files for atomic commits.
-- `git commit -m "<message>"`: Creates meaningful semantic commits (`chore`, `feat`, `docs`, `merge`).
-- `git switch -c feature/portfolio-enhancements`: Spawns and checks out an isolated feature branch.
-- `git merge feature/portfolio-enhancements --no-ff -m "<message>"`: Merges feature branch preserving branch history.
-- `git remote add origin https://github.com/rutujadeepakjagtap/DevOps.git`: Configures the remote GitHub repository.
-- `git push -u origin main`: Pushes commit history to GitHub.
-
----
-
-## 🚀 GitHub Pages Deployment Procedure
-
-Deploying this repository to GitHub Pages is completely automated and requires no build server:
-
-1. **Root Placement:** The entrypoint `index.html` resides in the repository root directory.
-2. **Relative Assets:** All links (`css/style.css`, `js/script.js`, `assets/...`, `assignments/...`) use relative paths.
-3. **Push to Main:** All code is committed and pushed to branch `main`.
-4. **Enable GitHub Pages:**
-   - In GitHub, navigate to **Settings &rarr; Pages**.
-   - Under **Build and deployment &rarr; Source**, select **Deploy from a branch**.
-   - Under **Branch**, select `main` and folder `/ (root)`.
-   - Click **Save**.
-5. **Live Verification:** Once the GitHub Actions deployment workflow finishes, the live website is available at:
-   👉 **[https://rutujadeepakjagtap.github.io/DevOps/](https://rutujadeepakjagtap.github.io/DevOps/)**
-
----
-
-## 📸 Lab Evidence & Screenshots
-
-Authentic architecture diagrams and terminal execution logs from practical sessions:
-
-| Assignment & Concept | Architecture / Evidence Figure |
-| :--- | :--- |
-| **Assignment 06:** Jenkins & GitHub CI Loop | ![Jenkins CI](./screenshots/assignment-06-jenkins-github_evidence_p2_2.jpeg) |
-| **Assignment 07:** Kubernetes & Helm Client Topology | ![K8s Helm](./screenshots/assignment-07-kubernetes-helm_evidence_p2_2.jpeg) |
-| **Assignment 08:** K8s Objects & Ansible Management | ![K8s Ansible](./screenshots/assignment-08-k8s-ansible_evidence_p2_2.jpeg) |
-| **Assignment 10:** K8s Core Objects & Storage | ![K8s Objects](./screenshots/assignment-10-k8s-objects-services_evidence_p3_2.jpeg) |
-| **Assignment 11:** Enterprise Multi-Tier Stack | ![Ansible Stack](./screenshots/assignment-11-ansible-case-study_evidence_p3_2.jpeg) |
-
----
-
-## 🎓 Viva Voce Preparation Guide (Oral Exam Q&A)
-
-### 1. What is DevOps and why is it important?
-> **Answer:** DevOps is a cultural and engineering methodology combining Software Development (Dev) and IT Operations (Ops). It emphasizes automated CI/CD pipelines, Infrastructure as Code, short feedback loops, and continuous monitoring to deliver high-quality software rapidly and reliably.
-
-### 2. Explain Git, Commits, Branches, and Merging.
-> **Answer:** 
-> - **Git:** A distributed version control system tracking file changes across time.
-> - **Commit:** An immutable snapshot of the repository at a specific point in time, identified by a cryptographic SHA-1/SHA-256 hash.
-> - **Branch:** A movable lightweight pointer to a commit, allowing developers to isolate feature development without affecting the production `main` branch.
-> - **Merging:** Combining changes from one branch into another (e.g. `main`), either via fast-forward or a merge commit (`--no-ff`).
-
-### 3. What is the role of Kubernetes and Helm in DevOps?
-> **Answer:** Kubernetes automates container deployment, scaling, healing, and network routing across physical/virtual server clusters. Helm acts as the package manager for Kubernetes, packaging multiple YAML files into reusable, versioned Helm Charts with variable injection.
-
-### 4. What is Ansible and why is it termed "Idempotent" and "Agentless"?
-> **Answer:** 
-> - **Agentless:** Ansible requires no background agent daemons or special ports on managed hosts; it executes over standard OpenSSH using Python.
-> - **Idempotent:** Running an Ansible playbook multiple times produces the exact same end state. If the target server already matches the playbook specification, Ansible makes no changes (`changed=0`), eliminating configuration drift.
-
-### 5. How does GitHub Pages serve websites?
-> **Answer:** GitHub Pages is a static site hosting service that serves HTML, CSS, and client-side JavaScript directly from a chosen branch (`main`) and directory (`/root` or `/docs`) of a GitHub repository over HTTPS.
-
----
-
-## 📝 Practical Verification Checklist
-
-- [x] Initialized Git repository with clean `.gitignore`.
-- [x] Created semantic commits with genuine development history.
-- [x] Implemented and merged feature branch (`feature/portfolio-enhancements`).
-- [x] Organized Assignments 6, 7, 8, 9, 10, and 11 into dedicated folders.
-- [x] Extracted runnable code manifests (Jenkinsfile, Kubernetes YAMLs, Helm templates, Ansible playbooks).
-- [x] Extracted architectural diagrams and terminal verification screenshots.
-- [x] Preserved all 6 original college assignment PDF documents.
-- [x] Designed responsive portfolio website with Dark/Light theme toggle.
-- [x] Tested responsive layouts, navigation, and modal command copy feature.
-- [x] Formulated detailed viva questions and answers guide.
-- [x] Configured remote origin: `https://github.com/rutujadeepakjagtap/DevOps.git`.
-
----
-
-## 📄 License & Attribution
-This repository is developed for academic evaluation in the DevOps Laboratory coursework at **Pimpri Chinchwad College of Engineering (PCCOE), Pune**.  
-Designed and maintained by **Rutuja Deepak Jagtap (PRN: 123B1B146)**.
-Distributed under the [MIT License](LICENSE).
+## 📜 License
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.

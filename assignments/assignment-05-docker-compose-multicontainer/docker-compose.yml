@@ -1,0 +1,56 @@
+# Docker Compose Multi-Container Orchestration File
+# DevOps Laboratory Assignment 05
+# Student: Rutuja Deepak Jagtap | PRN: 123B1B146 | PCCOE Pune
+
+services:
+  # Database Tier: PostgreSQL
+  db:
+    image: postgres:15-alpine
+    container_name: devops-asg5-db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-devops}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-devopspass}
+      POSTGRES_DB: ${POSTGRES_DB:-devopsdb}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - devops-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-devops} -d ${POSTGRES_DB:-devopsdb}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Application Tier: Flask Web Service
+  web:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: devops-asg5-web
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: ${POSTGRES_USER:-devops}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-devopspass}
+      POSTGRES_DB: ${POSTGRES_DB:-devopsdb}
+      PORT: 5000
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - devops-network
+
+# Named Persistent Volume for PostgreSQL Data
+volumes:
+  db_data:
+    driver: local
+
+# Isolated User-Defined Bridge Network
+networks:
+  devops-network:
+    driver: bridge
