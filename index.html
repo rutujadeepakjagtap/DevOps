@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rutuja Deepak Jagtap - DevOps Practical Portfolio, Laboratory Assignments, and Cloud Engineering Projects at PCCOE Pune.">
+  <meta name="author" content="Rutuja Deepak Jagtap">
+  <title>Rutuja Jagtap | DevOps Portfolio & Practical Repository</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="site-header" id="header">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" aria-label="Rutuja Jagtap Homepage">
+        <span class="brand-badge">RJ</span>
+        <span class="brand-text">Rutuja<span class="highlight">.DevOps</span></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#assignments" class="nav-link">DevOps Assignments</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#evidence" class="nav-link">Lab Evidence</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark and Light Mode" title="Toggle theme">
+          <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
+          <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobileMenuBtn" class="hamburger-btn" aria-label="Toggle mobile navigation menu" aria-expanded="false" aria-controls="mainNav">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span> Computer Engineering & DevOps Laboratory
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Rutuja Deepak Jagtap</span>
+          </h1>
+          <p class="hero-headline">
+            Computer Engineering Student at PCCOE Pune | Aspiring DevOps & Cloud-Native Engineer
+          </p>
+          <p class="hero-description">
+            Welcome to my comprehensive DevOps practical repository and engineering portfolio. Here you'll find end-to-end laboratory implementations covering <strong>Jenkins CI/CD automation</strong>, <strong>Kubernetes container orchestration</strong>, <strong>Helm package management</strong>, and <strong>Ansible agentless configuration management</strong>.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#assignments" class="btn btn-primary">Explore DevOps Practicals</a>
+            <a href="https://github.com/rutujadeepakjagtap/DevOps" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number">6+</span>
+              <span class="stat-label">DevOps Practicals</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Automated Workflows</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">Git</span>
+              <span class="stat-label">Version Controlled</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <span class="term-dot red"></span>
+              <span class="term-dot yellow"></span>
+              <span class="term-dot green"></span>
+              <span class="term-title">rutuja@devops-node:~$</span>
+            </div>
+            <div class="terminal-body">
+              <p class="term-line"><span class="term-prompt">$</span> git status</p>
+              <p class="term-out">On branch main &bull; working tree clean</p>
+              <p class="term-line"><span class="term-prompt">$</span> kubectl get nodes -o wide</p>
+              <p class="term-out text-success">NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS&nbsp;&nbsp;&nbsp;ROLES&nbsp;&nbsp;&nbsp;&nbsp;AGE&nbsp;&nbsp;&nbsp;VERSION</p>
+              <p class="term-out">control-plane&nbsp;Ready&nbsp;&nbsp;&nbsp;&nbsp;master&nbsp;&nbsp;&nbsp;14d&nbsp;&nbsp;&nbsp;v1.30.2</p>
+              <p class="term-out">worker-node-1&nbsp;Ready&nbsp;&nbsp;&nbsp;&nbsp;worker&nbsp;&nbsp;&nbsp;14d&nbsp;&nbsp;&nbsp;v1.30.2</p>
+              <p class="term-line"><span class="term-prompt">$</span> ansible-playbook -i inventory.ini site.yml</p>
+              <p class="term-out text-cyan">PLAY RECAP: ok=14 changed=4 unreachable=0 failed=0</p>
+              <p class="term-line"><span class="term-prompt">$</span> helm list -A</p>
+              <p class="term-out text-accent">NAME: webapp-chart &bull; STATUS: deployed &bull; REVISION: 1</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Profile Overview</span>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card profile-bio-card">
+            <div class="about-avatar-container">
+              <div class="avatar-ring">
+                <span class="avatar-initials">RJ</span>
+              </div>
+              <div class="avatar-meta">
+                <h3 class="profile-name">Rutuja Deepak Jagtap</h3>
+                <p class="profile-role">Computer Engineering Student</p>
+                <p class="profile-org">Pimpri Chinchwad College of Engineering (PCCOE), Pune</p>
+              </div>
+            </div>
+            <p class="bio-text">
+              I am a third-year Computer Engineering undergraduate at <strong>PCCOE Pune</strong> with a keen interest in modern Software Engineering, DevOps practices, Cloud Infrastructure, and Continuous Delivery pipelines. 
+            </p>
+            <p class="bio-text">
+              Through rigorous laboratory coursework and practical implementations, I have gained hands-on experience in orchestrating microservices with <strong>Kubernetes</strong>, packaging releases with <strong>Helm</strong>, automating server configuration with <strong>Ansible</strong>, and implementing robust CI/CD pipelines with <strong>Jenkins</strong> and <strong>Git</strong>.
+            </p>
+            <div class="academic-badges">
+              <span class="info-pill"><strong>PRN:</strong> 123B1B146</span>
+              <span class="info-pill"><strong>Batch:</strong> C1</span>
+              <span class="info-pill"><strong>Branch:</strong> Computer Engineering</span>
+              <span class="info-pill"><strong>Academic Year:</strong> 2026–2027</span>
+              <span class="info-pill"><strong>Institute:</strong> PCCOE, Pune (SPPU)</span>
+            </div>
+          </div>
+
+          <div class="about-card devops-philosophy-card">
+            <h3 class="card-heading">My DevOps Engineering Philosophy</h3>
+            <div class="philosophy-items">
+              <div class="ph-item">
+                <div class="ph-icon">🔄</div>
+                <div class="ph-text">
+                  <h4>Automate Everything</h4>
+                  <p>From source code checkout and syntax compilation to unit testing and container image delivery, manual friction is eliminated through code.</p>
+                </div>
+              </div>
+              <div class="ph-item">
+                <div class="ph-icon">📦</div>
+                <div class="ph-text">
+                  <h4>Infrastructure as Code (IaC)</h4>
+                  <p>Cluster states, server configurations, and deployment topologies are codified in version-controlled declarative manifests (YAML, Jinja2, Helm).</p>
+                </div>
+              </div>
+              <div class="ph-item">
+                <div class="ph-icon">🛡️</div>
+                <div class="ph-text">
+                  <h4>Idempotency & Reliability</h4>
+                  <p>Applying configurations repeatedly produces guaranteed, drift-free environments with self-healing Kubernetes reconciliation loops.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Technical Competencies</span>
+          <h2 class="section-title">Skills & Technologies</h2>
+          <div class="section-line"></div>
+          <p class="section-subtitle">Core technical tools, platforms, and languages applied across the DevOps lifecycle.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill Card 1: CI/CD & Automation -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon">⚙️</div>
+              <h3 class="category-title">CI / CD & Automation</h3>
+            </div>
+            <ul class="skill-items-list">
+              <li><span class="skill-name">Jenkins Automation Server</span><span class="skill-level">Advanced</span></li>
+              <li><span class="skill-name">Pipeline as Code (Jenkinsfile)</span><span class="skill-level">Proficient</span></li>
+              <li><span class="skill-name">GitHub Webhooks & SCM Polling</span><span class="skill-level">Proficient</span></li>
+              <li><span class="skill-name">Automated Testing & Linting</span><span class="skill-level">Intermediate</span></li>
+              <li><span class="skill-name">GitHub Actions CI</span><span class="skill-level">Intermediate</span></li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 2: Containerization & Orchestration -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon">☸️</div>
+              <h3 class="category-title">Container Orchestration</h3>
+            </div>
+            <ul class="skill-items-list">
+              <li><span class="skill-name">Kubernetes (K8s Architecture)</span><span class="skill-level">Advanced</span></li>
+              <li><span class="skill-name">Pods, Deployments & Namespaces</span><span class="skill-level">Advanced</span></li>
+              <li><span class="skill-name">Service Discovery & Networking</span><span class="skill-level">Advanced</span></li>
+              <li><span class="skill-name">Helm v3 Package Manager</span><span class="skill-level">Proficient</span></li>
+              <li><span class="skill-name">ConfigMaps, Secrets, PV & PVC</span><span class="skill-level">Proficient</span></li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 3: Configuration Management -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon">📜</div>
+              <h3 class="category-title">Configuration Management</h3>
+            </div>
+            <ul class="skill-items-list">
+              <li><span class="skill-name">Ansible Automation</span><span class="skill-level">Advanced</span></li>
+              <li><span class="skill-name">Declarative YAML Playbooks</span><span class="skill-level">Advanced</span></li>
+              <li><span class="skill-name">Agentless SSH Architecture</span><span class="skill-level">Proficient</span></li>
+              <li><span class="skill-name">Jinja2 Dynamic Templating</span><span class="skill-level">Proficient</span></li>
+              <li><span class="skill-name">Ansible Roles & Inventory Design</span><span class="skill-level">Proficient</span></li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 4: Systems & Version Control -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon">💻</div>
+              <h3 class="category-title">Systems & Languages</h3>
+            </div>
+            <ul class="skill-items-list">
+              <li><span class="skill-name">Git & GitHub Version Control</span><span class="skill-level">Advanced</span></li>
+              <li><span class="skill-name">Linux / Ubuntu Administration</span><span class="skill-level">Proficient</span></li>
+              <li><span class="skill-name">Python 3 & Flask REST APIs</span><span class="skill-level">Proficient</span></li>
+              <li><span class="skill-name">Nginx Web Server & Reverse Proxy</span><span class="skill-level">Proficient</span></li>
+              <li><span class="skill-name">HTML5, Modern CSS3, JavaScript</span><span class="skill-level">Proficient</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DevOps Practical Assignments Section -->
+    <section class="section assignments-section" id="assignments">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Laboratory Work</span>
+          <h2 class="section-title">DevOps Practical Assignments</h2>
+          <div class="section-line"></div>
+          <p class="section-subtitle">
+            Curated college laboratory assignments covering the complete DevOps lifecycle. Each assignment contains full technical reports, runnable manifests, and practical execution logs.
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls" role="tablist" aria-label="Assignment Categories">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Practicals</button>
+          <button class="filter-btn" data-filter="cicd" role="tab" aria-selected="false">CI/CD & Jenkins</button>
+          <button class="filter-btn" data-filter="k8s" role="tab" aria-selected="false">Kubernetes</button>
+          <button class="filter-btn" data-filter="helm" role="tab" aria-selected="false">Helm Charts</button>
+          <button class="filter-btn" data-filter="ansible" role="tab" aria-selected="false">Ansible</button>
+        </div>
+
+        <!-- Assignments Grid -->
+        <div class="assignments-grid">
+
+          <!-- Assignment 6 -->
+          <article class="assignment-card" data-category="cicd">
+            <div class="assignment-badge-row">
+              <span class="asg-badge badge-cicd">Assignment 06</span>
+              <span class="asg-tag">Jenkins &bull; GitHub CI</span>
+            </div>
+            <h3 class="assignment-title">Jenkins Integration with GitHub for Automated Source Code Retrieval</h3>
+            <p class="assignment-aim">
+              <strong>Aim:</strong> To configure Jenkins with a GitHub repository and automate the process of pulling source code from the repository for Continuous Integration.
+            </p>
+            <div class="assignment-highlights">
+              <span class="hl-tag">Jenkins SCM</span>
+              <span class="hl-tag">Pipeline as Code</span>
+              <span class="hl-tag">Flask REST API</span>
+              <span class="hl-tag">Automated Unit Tests</span>
+              <span class="hl-tag">Webhooks</span>
+            </div>
+            <div class="assignment-links">
+              <a href="assignments/assignment-06-jenkins-github/README.md" class="btn btn-sm btn-primary">Read Lab Manual</a>
+              <a href="assets/docs/123B1B146_RUTUJA_JAGTAP_DevOps_Assignment_6_Jenkins_GitHub.pdf" target="_blank" class="btn btn-sm btn-outline">PDF Report</a>
+              <button class="btn btn-sm btn-ghost view-details-btn" data-modal="modal-asg-6">Quick View</button>
+            </div>
+          </article>
+
+          <!-- Assignment 7 -->
+          <article class="assignment-card" data-category="k8s helm">
+            <div class="assignment-badge-row">
+              <span class="asg-badge badge-k8s">Assignment 07</span>
+              <span class="asg-tag">K8s &bull; Helm Deployment</span>
+            </div>
+            <h3 class="assignment-title">Kubernetes Container Orchestration & Application Deployment Using Helm</h3>
+            <p class="assignment-aim">
+              <strong>Aim:</strong> To study Kubernetes architecture and understand the structure and commands of Helm for managing containerized applications.
+            </p>
+            <div class="assignment-highlights">
+              <span class="hl-tag">Control Plane</span>
+              <span class="hl-tag">Worker Nodes</span>
+              <span class="hl-tag">Chart.yaml</span>
+              <span class="hl-tag">values.yaml</span>
+              <span class="hl-tag">Helm Lifecycle</span>
+            </div>
+            <div class="assignment-links">
+              <a href="assignments/assignment-07-kubernetes-helm/README.md" class="btn btn-sm btn-primary">Read Lab Manual</a>
+              <a href="assets/docs/123B1B146_Rutuja_Jagtap_DevOps_Assignment_7_Kubernetes_Helm.pdf" target="_blank" class="btn btn-sm btn-outline">PDF Report</a>
+              <button class="btn btn-sm btn-ghost view-details-btn" data-modal="modal-asg-7">Quick View</button>
+            </div>
+          </article>
+
+          <!-- Assignment 8 -->
+          <article class="assignment-card" data-category="k8s ansible">
+            <div class="assignment-badge-row">
+              <span class="asg-badge badge-ansible">Assignment 08</span>
+              <span class="asg-tag">Kubernetes &bull; Ansible</span>
+            </div>
+            <h3 class="assignment-title">Kubernetes Objects & Services with Ansible Automated Configuration Management</h3>
+            <p class="assignment-aim">
+              <strong>Aim:</strong> To study important Kubernetes objects and networking services and demonstrate the use of Ansible for automated server configuration.
+            </p>
+            <div class="assignment-highlights">
+              <span class="hl-tag">Pods & Deployments</span>
+              <span class="hl-tag">NodePort Service</span>
+              <span class="hl-tag">Agentless SSH</span>
+              <span class="hl-tag">Nginx Playbook</span>
+              <span class="hl-tag">Idempotency</span>
+            </div>
+            <div class="assignment-links">
+              <a href="assignments/assignment-08-k8s-ansible/README.md" class="btn btn-sm btn-primary">Read Lab Manual</a>
+              <a href="assets/docs/123B1B146_Rutuja_Jagtap_DevOps_Assignment_8_K8s_Ansible.pdf" target="_blank" class="btn btn-sm btn-outline">PDF Report</a>
+              <button class="btn btn-sm btn-ghost view-details-btn" data-modal="modal-asg-8">Quick View</button>
+            </div>
+          </article>
+
+          <!-- Assignment 9 -->
+          <article class="assignment-card" data-category="k8s helm">
+            <div class="assignment-badge-row">
+              <span class="asg-badge badge-k8s">Assignment 09</span>
+              <span class="asg-tag">K8s &bull; Helm Orchestration</span>
+            </div>
+            <h3 class="assignment-title">Container Orchestration Using Kubernetes, Architecture & Helm Chart Management</h3>
+            <p class="assignment-aim">
+              <strong>Aim:</strong> To explore container orchestration in Kubernetes, analyze control-plane/worker topology, and author Helm charts with lifecycle commands.
+            </p>
+            <div class="assignment-highlights">
+              <span class="hl-tag">API Server & etcd</span>
+              <span class="hl-tag">kubelet & kube-proxy</span>
+              <span class="hl-tag">webapp-chart</span>
+              <span class="hl-tag">Template Rendering</span>
+              <span class="hl-tag">Rollback</span>
+            </div>
+            <div class="assignment-links">
+              <a href="assignments/assignment-09-kubernetes-helm/README.md" class="btn btn-sm btn-primary">Read Lab Manual</a>
+              <a href="assets/docs/123B1B146_RUTUJA_JAGTAP_DevOps_Assignment_9_Kubernetes_Helm.pdf" target="_blank" class="btn btn-sm btn-outline">PDF Report</a>
+              <button class="btn btn-sm btn-ghost view-details-btn" data-modal="modal-asg-9">Quick View</button>
+            </div>
+          </article>
+
+          <!-- Assignment 10 -->
+          <article class="assignment-card" data-category="k8s">
+            <div class="assignment-badge-row">
+              <span class="asg-badge badge-k8s">Assignment 10</span>
+              <span class="asg-tag">K8s Objects &bull; Networking</span>
+            </div>
+            <h3 class="assignment-title">Discover Kubernetes Objects & Service Networking Architecture</h3>
+            <p class="assignment-aim">
+              <strong>Aim:</strong> To explore core Kubernetes objects (Pod, Deployment, Namespace, ConfigMap, Secret, PV/PVC) and evaluate the 4 service routing types.
+            </p>
+            <div class="assignment-highlights">
+              <span class="hl-tag">ClusterIP</span>
+              <span class="hl-tag">NodePort</span>
+              <span class="hl-tag">LoadBalancer</span>
+              <span class="hl-tag">ExternalName</span>
+              <span class="hl-tag">Storage PV/PVC</span>
+            </div>
+            <div class="assignment-links">
+              <a href="assignments/assignment-10-k8s-objects-services/README.md" class="btn btn-sm btn-primary">Read Lab Manual</a>
+              <a href="assets/docs/123B1B146_Rutuja_Jagtap_DevOps_Assignment_10_K8s_Objects_Services.pdf" target="_blank" class="btn btn-sm btn-outline">PDF Report</a>
+              <button class="btn btn-sm btn-ghost view-details-btn" data-modal="modal-asg-10">Quick View</button>
+            </div>
+          </article>
+
+          <!-- Assignment 11 -->
+          <article class="assignment-card" data-category="ansible">
+            <div class="assignment-badge-row">
+              <span class="asg-badge badge-ansible">Assignment 11</span>
+              <span class="asg-tag">Ansible &bull; Enterprise Stack</span>
+            </div>
+            <h3 class="assignment-title">Case Study on Ansible Configuration Management & Enterprise Multi-Tier Stack</h3>
+            <p class="assignment-aim">
+              <strong>Aim:</strong> To evaluate Ansible agentless configuration management and demonstrate automated provisioning of an enterprise multi-tier web application stack.
+            </p>
+            <div class="assignment-highlights">
+              <span class="hl-tag">Nginx Load Balancer</span>
+              <span class="hl-tag">Web App Cluster</span>
+              <span class="hl-tag">PostgreSQL Database</span>
+              <span class="hl-tag">Jinja2 Upstream</span>
+              <span class="hl-tag">Ansible Roles</span>
+            </div>
+            <div class="assignment-links">
+              <a href="assignments/assignment-11-ansible-case-study/README.md" class="btn btn-sm btn-primary">Read Lab Manual</a>
+              <a href="assets/docs/123B1B146_Rutuja_Jagtap_DevOps_Assignment_11_Ansible_Case_Study.pdf" target="_blank" class="btn btn-sm btn-outline">PDF Report</a>
+              <button class="btn btn-sm btn-ghost view-details-btn" data-modal="modal-asg-11">Quick View</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Lab Evidence & Architectural Blueprints Section -->
+    <section class="section evidence-section" id="evidence">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Verification & Architecture</span>
+          <h2 class="section-title">Practical Evidence & Architectures</h2>
+          <div class="section-line"></div>
+          <p class="section-subtitle">
+            Authentic engineering blueprints, system topology diagrams, and laboratory execution evidence extracted from practical assignments.
+          </p>
+        </div>
+
+        <div class="evidence-grid">
+          <!-- Evidence 1: Jenkins GitHub Architecture -->
+          <div class="evidence-card">
+            <div class="evidence-img-wrap">
+              <img src="assignments/assignment-06-jenkins-github/screenshots/evidence_p2_1.jpeg" alt="Jenkins and GitHub CI Architecture Diagram" loading="lazy">
+            </div>
+            <div class="evidence-info">
+              <h4>Jenkins & GitHub CI Architecture</h4>
+              <p>Continuous integration feedback loop: Git commit push &rarr; Webhook trigger &rarr; Isolated Jenkins workspace checkout &rarr; Syntax verification &rarr; Unit test suite.</p>
+              <span class="asg-ref">Assignment 06 &bull; Figure 1</span>
+            </div>
+          </div>
+
+          <!-- Evidence 2: Kubernetes Cluster Architecture -->
+          <div class="evidence-card">
+            <div class="evidence-img-wrap">
+              <img src="assignments/assignment-07-kubernetes-helm/screenshots/evidence_p2_1.jpeg" alt="Kubernetes Control Plane and Helm Deployment Architecture" loading="lazy">
+            </div>
+            <div class="evidence-info">
+              <h4>Kubernetes & Helm Deployment Topology</h4>
+              <p>Interaction between Helm package client and Kubernetes Control Plane (kube-apiserver, etcd, scheduler, controller manager) with worker node kubelets.</p>
+              <span class="asg-ref">Assignment 07 &bull; Figure 1</span>
+            </div>
+          </div>
+
+          <!-- Evidence 3: Kubernetes Objects & Ansible -->
+          <div class="evidence-card">
+            <div class="evidence-img-wrap">
+              <img src="assignments/assignment-08-k8s-ansible/screenshots/evidence_p2_1.jpeg" alt="Kubernetes Object Hierarchy and Ansible Agentless Architecture" loading="lazy">
+            </div>
+            <div class="evidence-info">
+              <h4>K8s Objects & Ansible Control Plane</h4>
+              <p>Dual-tier DevOps architecture combining Kubernetes container orchestration with Ansible agentless OpenSSH host provisioning and idempotency.</p>
+              <span class="asg-ref">Assignment 08 &bull; Figure 1</span>
+            </div>
+          </div>
+
+          <!-- Evidence 4: Ansible Multi-Tier Enterprise Architecture -->
+          <div class="evidence-card">
+            <div class="evidence-img-wrap">
+              <img src="assignments/assignment-11-ansible-case-study/screenshots/evidence_p3_1.jpeg" alt="Ansible Multi-Tier Enterprise Application Stack Architecture" loading="lazy">
+            </div>
+            <div class="evidence-info">
+              <h4>Ansible Multi-Tier Enterprise Topology</h4>
+              <p>Enterprise orchestration: Tier 1 Common baseline &rarr; Tier 2 PostgreSQL database &rarr; Tier 3 Web server cluster &rarr; Tier 4 Nginx dynamic reverse proxy load balancer.</p>
+              <span class="asg-ref">Assignment 11 &bull; Figure 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Projects Section -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Portfolio Showcase</span>
+          <h2 class="section-title">DevOps & Cloud Projects</h2>
+          <div class="section-line"></div>
+          <p class="section-subtitle">Real-world applications of continuous delivery, containerization, and infrastructure automation.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">🚀</div>
+              <div class="project-tags">
+                <span>Jenkins</span>
+                <span>Python</span>
+                <span>CI/CD</span>
+              </div>
+            </div>
+            <h3 class="project-title">Automated CI/CD Pipeline for REST Microservices</h3>
+            <p class="project-desc">
+              Constructed a Declarative Pipeline in Jenkins connecting to GitHub SCM. Codified build compilation, unit test validation with zero false positives, and automated post-build notifications.
+            </p>
+            <ul class="project-features">
+              <li>Webhook & SCM polling automated triggers</li>
+              <li>Unit test execution inside clean virtual environments</li>
+              <li>Console telemetry and automated artifact archiving</li>
+            </ul>
+            <div class="project-actions">
+              <a href="assignments/assignment-06-jenkins-github/devops-demo/Jenkinsfile" class="btn btn-sm btn-primary">View Jenkinsfile</a>
+              <a href="assignments/assignment-06-jenkins-github/" class="btn btn-sm btn-outline">Project Docs</a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">☸️</div>
+              <div class="project-tags">
+                <span>Kubernetes</span>
+                <span>Helm</span>
+                <span>Cloud-Native</span>
+              </div>
+            </div>
+            <h3 class="project-title">Cloud-Native Microservices Helm Packaging</h3>
+            <p class="project-desc">
+              Engineered parameterized Helm v3 charts for microservice workloads. Decoupled environment-specific configurations into values.yaml, supporting instant staging and production rollouts.
+            </p>
+            <ul class="project-features">
+              <li>Dynamic Go-template manifest evaluation</li>
+              <li>Rolling zero-downtime upgrades and automated rollbacks</li>
+              <li>Multi-service ClusterIP and NodePort traffic routing</li>
+            </ul>
+            <div class="project-actions">
+              <a href="assignments/assignment-09-kubernetes-helm/webapp-chart/" class="btn btn-sm btn-primary">Browse Chart</a>
+              <a href="assignments/assignment-09-kubernetes-helm/" class="btn btn-sm btn-outline">Project Docs</a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">⚡</div>
+              <div class="project-tags">
+                <span>Ansible</span>
+                <span>Nginx</span>
+                <span>PostgreSQL</span>
+              </div>
+            </div>
+            <h3 class="project-title">Multi-Tier Enterprise Infrastructure as Code</h3>
+            <p class="project-desc">
+              Developed production-grade Ansible playbooks to provision a complete 3-tier architecture: Nginx reverse proxy load balancer, Python web app cluster, and hardened PostgreSQL database.
+            </p>
+            <ul class="project-features">
+              <li>100% idempotent execution with zero configuration drift</li>
+              <li>Dynamic Jinja2 upstream template generation</li>
+              <li>Agentless execution over encrypted OpenSSH tunnels</li>
+            </ul>
+            <div class="project-actions">
+              <a href="assignments/assignment-11-ansible-case-study/ansible/site.yml" class="btn btn-sm btn-primary">View Playbook</a>
+              <a href="assignments/assignment-11-ansible-case-study/" class="btn btn-sm btn-outline">Project Docs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic Background</span>
+          <h2 class="section-title">Education</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <span class="timeline-year">2023 &ndash; 2027 (Expected)</span>
+                <span class="timeline-badge">Pursuing B.Tech</span>
+              </div>
+              <h3 class="timeline-title">Bachelor of Technology in Computer Engineering</h3>
+              <h4 class="timeline-institution">Pimpri Chinchwad College of Engineering (PCCOE), Pune</h4>
+              <p class="timeline-note">Autonomous Institute Affiliated to Savitribai Phule Pune University (SPPU)</p>
+              <p class="timeline-desc">
+                Relevant Coursework: DevOps Engineering, Cloud Computing, Operating Systems, Computer Networks, Database Management Systems, Data Structures & Algorithms, Object-Oriented Software Engineering.
+              </p>
+              <div class="timeline-tags">
+                <span>PRN: 123B1B146</span>
+                <span>Batch: C1</span>
+                <span>Department of Computer Engineering</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <span class="timeline-year">2021 &ndash; 2023</span>
+                <span class="timeline-badge">Completed</span>
+              </div>
+              <h3 class="timeline-title">Higher Secondary Certificate (HSC &bull; Class XII)</h3>
+              <h4 class="timeline-institution">Maharashtra State Board of Secondary and Higher Secondary Education</h4>
+              <p class="timeline-desc">
+                Specialized in Science stream with focus on Physics, Chemistry, and Mathematics (PCM).
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <span class="timeline-year">2021</span>
+                <span class="timeline-badge">Completed</span>
+              </div>
+              <h3 class="timeline-title">Secondary School Certificate (SSC &bull; Class X)</h3>
+              <h4 class="timeline-institution">Maharashtra State Board</h4>
+              <p class="timeline-desc">
+                Graduated with distinction and foundational interest in computer science and mathematics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Communication</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="section-line"></div>
+          <p class="section-subtitle">Feel free to reach out regarding academic inquiries, DevOps collaborations, or project queries.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-panel">
+            <h3 class="panel-heading">Contact Information</h3>
+            <p class="panel-desc">
+              Have questions about this repository or want to connect? Reach out through any of the channels below.
+            </p>
+            <div class="contact-items">
+              <div class="c-item">
+                <div class="c-icon">📧</div>
+                <div class="c-details">
+                  <span class="c-label">College Email</span>
+                  <a href="mailto:rutuja.jagtap23@pccoepune.org" class="c-link">rutuja.jagtap23@pccoepune.org</a>
+                </div>
+              </div>
+              <div class="c-item">
+                <div class="c-icon">💻</div>
+                <div class="c-details">
+                  <span class="c-label">GitHub Profile</span>
+                  <a href="https://github.com/rutujadeepakjagtap" target="_blank" rel="noopener noreferrer" class="c-link">github.com/rutujadeepakjagtap</a>
+                </div>
+              </div>
+              <div class="c-item">
+                <div class="c-icon">📁</div>
+                <div class="c-details">
+                  <span class="c-label">Practical Repository</span>
+                  <a href="https://github.com/rutujadeepakjagtap/DevOps" target="_blank" rel="noopener noreferrer" class="c-link">github.com/rutujadeepakjagtap/DevOps</a>
+                </div>
+              </div>
+              <div class="c-item">
+                <div class="c-icon">📍</div>
+                <div class="c-details">
+                  <span class="c-label">Location</span>
+                  <span class="c-text">PCCOE, Pune, Maharashtra, India</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-panel">
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contactName">Your Name</label>
+                <input type="text" id="contactName" name="name" class="form-control" placeholder="Enter your full name" required>
+                <span class="form-error" id="nameError">Please enter your name.</span>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Your Email</label>
+                <input type="email" id="contactEmail" name="email" class="form-control" placeholder="name@example.com" required>
+                <span class="form-error" id="emailError">Please enter a valid email address.</span>
+              </div>
+              <div class="form-group">
+                <label for="contactSubject">Subject</label>
+                <input type="text" id="contactSubject" name="subject" class="form-control" placeholder="Topic or practical inquiry" required>
+                <span class="form-error" id="subjectError">Please enter a subject.</span>
+              </div>
+              <div class="form-group">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" name="message" rows="4" class="form-control" placeholder="Your message or feedback..." required></textarea>
+                <span class="form-error" id="messageError">Please enter your message.</span>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                <span>Send Message</span>
+              </button>
+              <div class="form-feedback" id="formFeedback" role="alert"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Quick View Modal Container -->
+  <div class="modal-overlay" id="assignmentModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Assignment Details</h3>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Content injected dynamically via JavaScript -->
+      </div>
+      <div class="modal-footer" id="modalFooter">
+        <a href="#" id="modalManualLink" class="btn btn-sm btn-primary">Open Full Documentation</a>
+        <a href="#" id="modalPdfLink" target="_blank" class="btn btn-sm btn-outline">Download PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="brand-text">Rutuja<span class="highlight">.DevOps</span></span>
+        <p class="footer-tagline">DevOps Practical Repository & Portfolio &bull; PCCOE Pune</p>
+      </div>
+      <div class="footer-meta">
+        <p>&copy; 2026 Rutuja Deepak Jagtap (PRN: 123B1B146). All rights reserved.</p>
+        <p>Built with vanilla HTML5, CSS3, and JavaScript &bull; Hosted on GitHub Pages.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home" class="back-to-top-btn" title="Back to top" aria-label="Back to top">↑ Top</a>
+        <a href="https://github.com/rutujadeepakjagtap/DevOps" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
