@@ -68,8 +68,8 @@ kubectl exec -it $(kubectl get pods -n dev-space -l app=webapp -o jsonpath='{.it
 
 ## 7. Practical Evidence & Verification
 - Architectural topology of objects and service routing:
-  ![K8s Objects Architecture](./screenshots/evidence_p3_1.jpeg)
-  ![Service Networking](./screenshots/evidence_p4_2.jpeg)
+  ![K8s Objects Architecture](./screenshots/evidence_p3_2.jpeg)
+  ![Service Networking](./screenshots/evidence_p4_3.jpeg)
 - Terminal execution output and service discovery verification:
   ![Verification Output](./screenshots/evidence_p10_4.jpeg)
   ![Endpoints Verification](./screenshots/evidence_p10_5.jpeg)

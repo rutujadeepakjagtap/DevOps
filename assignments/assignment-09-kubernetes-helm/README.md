@@ -78,7 +78,7 @@ helm uninstall webapp-release
 
 ## 7. Practical Evidence & Verification
 - Multi-node Kubernetes architecture and Helm deployment interaction:
-  ![K8s Architecture](./screenshots/evidence_p2_1.jpeg)
+  ![K8s Architecture](./screenshots/evidence_p2_2.jpeg)
 - Execution logs demonstrating chart rendering and rollback:
   ![Rollback Logs](./screenshots/evidence_p8_4.jpeg)
   ![Status Logs](./screenshots/evidence_p8_5.jpeg)

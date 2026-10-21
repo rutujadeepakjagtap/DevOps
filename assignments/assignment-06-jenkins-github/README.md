@@ -74,7 +74,7 @@ When changes are pushed to GitHub, Jenkins intercepts the event via webhook or S
 
 ## 8. Practical Evidence & Verification
 - Architecture diagram and operational workflow:
-  ![CI Architecture](./screenshots/evidence_p2_1.jpeg)
+  ![CI Architecture](./screenshots/evidence_p2_2.jpeg)
 - Jenkins console logs and build execution verification:
   ![Console Output](./screenshots/evidence_p8_4.jpeg)
   ![Build Success](./screenshots/evidence_p8_5.jpeg)

@@ -68,7 +68,7 @@ ansible-playbook -i ansible/inventory.ini ansible/install-nginx.yml
 
 ## 7. Practical Evidence & Verification
 - Architectural overview of K8s objects and Ansible management:
-  ![K8s and Ansible Architecture](./screenshots/evidence_p2_1.jpeg)
+  ![K8s and Ansible Architecture](./screenshots/evidence_p2_2.jpeg)
 - Execution logs showing playbook execution and idempotency:
   ![Ansible Execution Logs](./screenshots/evidence_p8_4.jpeg)
   ![Playbook Verification](./screenshots/evidence_p8_5.jpeg)

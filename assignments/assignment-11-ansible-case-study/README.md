@@ -75,7 +75,7 @@ curl -I http://192.168.1.50
 
 ## 7. Practical Evidence & Verification
 - Enterprise multi-tier architecture & Jinja2 upstream loop:
-  ![Ansible Enterprise Architecture](./screenshots/evidence_p3_1.jpeg)
+  ![Ansible Enterprise Architecture](./screenshots/evidence_p3_2.jpeg)
   ![Jinja2 Upstream Flow](./screenshots/evidence_p3_2.jpeg)
 - Terminal play recap and verification output:
   ![Ansible Play Recap](./screenshots/evidence_p9_4.jpeg)

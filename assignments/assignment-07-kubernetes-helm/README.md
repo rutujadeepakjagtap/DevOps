@@ -77,7 +77,7 @@ helm uninstall my-release
 
 ## 7. Practical Evidence & Verification
 - Kubernetes cluster architecture & Helm client interaction:
-  ![Kubernetes Helm Architecture](./screenshots/evidence_p2_1.jpeg)
+  ![Kubernetes Helm Architecture](./screenshots/evidence_p2_2.jpeg)
 - Execution logs and Helm status verification:
   ![Helm Verification](./screenshots/evidence_p8_4.jpeg)
   ![Helm Release Status](./screenshots/evidence_p8_5.jpeg)
