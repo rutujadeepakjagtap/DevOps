@@ -75,8 +75,8 @@
           </div>
           <div class="hero-stats">
             <div class="stat-card">
-              <span class="stat-number">6+</span>
-              <span class="stat-label">DevOps Practicals</span>
+              <span class="stat-number">11</span>
+              <span class="stat-label">DevOps Practicals (1-11)</span>
             </div>
             <div class="stat-card">
               <span class="stat-number">100%</span>
@@ -268,15 +268,137 @@
 
         <!-- Filter Controls -->
         <div class="filter-controls" role="tablist" aria-label="Assignment Categories">
-          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Practicals</button>
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Practicals (11)</button>
+          <button class="filter-btn" data-filter="git" role="tab" aria-selected="false">Git & Version Control</button>
+          <button class="filter-btn" data-filter="cloud" role="tab" aria-selected="false">AWS & Terraform</button>
+          <button class="filter-btn" data-filter="docker" role="tab" aria-selected="false">Docker Containers</button>
           <button class="filter-btn" data-filter="cicd" role="tab" aria-selected="false">CI/CD & Jenkins</button>
-          <button class="filter-btn" data-filter="k8s" role="tab" aria-selected="false">Kubernetes</button>
-          <button class="filter-btn" data-filter="helm" role="tab" aria-selected="false">Helm Charts</button>
+          <button class="filter-btn" data-filter="k8s" role="tab" aria-selected="false">Kubernetes & Helm</button>
           <button class="filter-btn" data-filter="ansible" role="tab" aria-selected="false">Ansible</button>
         </div>
 
         <!-- Assignments Grid -->
         <div class="assignments-grid">
+
+          <!-- Assignment 1 -->
+          <article class="assignment-card" data-category="git">
+            <div class="assignment-badge-row">
+              <span class="asg-badge badge-cicd">Assignment 01</span>
+              <span class="asg-tag">Git &bull; GitHub Pages</span>
+            </div>
+            <h3 class="assignment-title">Git Version Control Workflow & GitHub Pages Live Deployment</h3>
+            <p class="assignment-aim">
+              <strong>Aim:</strong> To explore Git commands for local and remote repositories, semantic commits, feature branching, and non-fast-forward merging.
+            </p>
+            <div class="assignment-highlights">
+              <span class="hl-tag">Git 3-Tree</span>
+              <span class="hl-tag">Semantic Commits</span>
+              <span class="hl-tag">Feature Branching</span>
+              <span class="hl-tag">--no-ff Merge</span>
+              <span class="hl-tag">GitHub Pages</span>
+            </div>
+            <div class="assignment-links">
+              <a href="assignments/assignment-01-git-version-control/README.md" class="btn btn-sm btn-primary">Read Lab Manual</a>
+              <a href="assets/docs/123B1B146_Rutuja_Jagtap_DevOps_Assignment_Git_Portfolio_Deployment.pdf" target="_blank" class="btn btn-sm btn-outline">PDF Report</a>
+              <button class="btn btn-sm btn-ghost view-details-btn" data-modal="modal-asg-1">Quick View</button>
+            </div>
+          </article>
+
+          <!-- Assignment 2 -->
+          <article class="assignment-card" data-category="cloud">
+            <div class="assignment-badge-row">
+              <span class="asg-badge badge-k8s">Assignment 02</span>
+              <span class="asg-tag">AWS EC2 &bull; Cloud Services</span>
+            </div>
+            <h3 class="assignment-title">AWS Cloud Services Exploration & EC2 Instance Lifecycle</h3>
+            <p class="assignment-aim">
+              <strong>Aim:</strong> To explore core AWS services (EC2, S3, RDS, Lambda, ELB, ECS), launch EC2 instance, configure security groups, and monitor via CloudWatch.
+            </p>
+            <div class="assignment-highlights">
+              <span class="hl-tag">AWS EC2</span>
+              <span class="hl-tag">Security Groups</span>
+              <span class="hl-tag">SSH Key Pairs</span>
+              <span class="hl-tag">CloudWatch Telemetry</span>
+              <span class="hl-tag">Free Tier Safe</span>
+            </div>
+            <div class="assignment-links">
+              <a href="assignments/assignment-02-aws-cloud-ec2/README.md" class="btn btn-sm btn-primary">Read Lab Manual</a>
+              <a href="assets/docs/123B1B146_Devops2.pdf" target="_blank" class="btn btn-sm btn-outline">PDF Report</a>
+              <button class="btn btn-sm btn-ghost view-details-btn" data-modal="modal-asg-2">Quick View</button>
+            </div>
+          </article>
+
+          <!-- Assignment 3 -->
+          <article class="assignment-card" data-category="cloud">
+            <div class="assignment-badge-row">
+              <span class="asg-badge badge-k8s">Assignment 03</span>
+              <span class="asg-tag">Terraform &bull; IaC</span>
+            </div>
+            <h3 class="assignment-title">Infrastructure as Code (IaC) Using HashiCorp Terraform</h3>
+            <p class="assignment-aim">
+              <strong>Aim:</strong> To study IaC concepts, author declarative HCL manifests for AWS EC2 and security groups, and execute the complete Terraform lifecycle.
+            </p>
+            <div class="assignment-highlights">
+              <span class="hl-tag">HashiCorp HCL</span>
+              <span class="hl-tag">AWS Provider v5</span>
+              <span class="hl-tag">terraform plan</span>
+              <span class="hl-tag">State Management</span>
+              <span class="hl-tag">SSM Parameter Store</span>
+            </div>
+            <div class="assignment-links">
+              <a href="assignments/assignment-03-terraform-iac/README.md" class="btn btn-sm btn-primary">Read Lab Manual</a>
+              <a href="assets/docs/123B1B146_Devops_ass_3.pdf" target="_blank" class="btn btn-sm btn-outline">PDF Report</a>
+              <button class="btn btn-sm btn-ghost view-details-btn" data-modal="modal-asg-3">Quick View</button>
+            </div>
+          </article>
+
+          <!-- Assignment 4 -->
+          <article class="assignment-card" data-category="docker">
+            <div class="assignment-badge-row">
+              <span class="asg-badge badge-ansible">Assignment 04</span>
+              <span class="asg-tag">Docker &bull; Containerization</span>
+            </div>
+            <h3 class="assignment-title">Docker Architecture & Python Application Containerization</h3>
+            <p class="assignment-aim">
+              <strong>Aim:</strong> To explore Docker architecture and author an optimized Dockerfile to package a Python Flask microservice with health probes and non-root security.
+            </p>
+            <div class="assignment-highlights">
+              <span class="hl-tag">Docker Engine</span>
+              <span class="hl-tag">Layer Caching</span>
+              <span class="hl-tag">Flask Microservice</span>
+              <span class="hl-tag">Non-Root Security</span>
+              <span class="hl-tag">Healthcheck Probes</span>
+            </div>
+            <div class="assignment-links">
+              <a href="assignments/assignment-04-docker-python-app/README.md" class="btn btn-sm btn-primary">Read Lab Manual</a>
+              <a href="assets/docs/123B1B146_Devops5.pdf" target="_blank" class="btn btn-sm btn-outline">PDF Report</a>
+              <button class="btn btn-sm btn-ghost view-details-btn" data-modal="modal-asg-4">Quick View</button>
+            </div>
+          </article>
+
+          <!-- Assignment 5 -->
+          <article class="assignment-card" data-category="docker">
+            <div class="assignment-badge-row">
+              <span class="asg-badge badge-ansible">Assignment 05</span>
+              <span class="asg-tag">Docker Compose &bull; Multi-Container</span>
+            </div>
+            <h3 class="assignment-title">Multi-Container Application Using Docker Compose (Flask + PostgreSQL)</h3>
+            <p class="assignment-aim">
+              <strong>Aim:</strong> To orchestrate a multi-container stack connecting a Flask web app with PostgreSQL database, persistent volumes, and health synchronization.
+            </p>
+            <div class="assignment-highlights">
+              <span class="hl-tag">Docker Compose v5</span>
+              <span class="hl-tag">PostgreSQL 15</span>
+              <span class="hl-tag">Named Volumes</span>
+              <span class="hl-tag">Bridge Networking</span>
+              <span class="hl-tag">depends_on Healthy</span>
+            </div>
+            <div class="assignment-links">
+              <a href="assignments/assignment-05-docker-compose-multicontainer/README.md" class="btn btn-sm btn-primary">Read Lab Manual</a>
+              <a href="assets/docs/123B1B146_Devops5.pdf" target="_blank" class="btn btn-sm btn-outline">PDF Report</a>
+              <button class="btn btn-sm btn-ghost view-details-btn" data-modal="modal-asg-5">Quick View</button>
+            </div>
+          </article>
 
           <!-- Assignment 6 -->
           <article class="assignment-card" data-category="cicd">
