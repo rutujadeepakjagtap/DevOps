@@ -6,6 +6,11 @@
 **Academic Year:** 2026–2027  
 **Official Curriculum Code:** `BCE27PE01` / `CE-4202`  
 
+### Quick Download Links for Faculty Submission:
+- 📄 **Download PDF Report:** [123B1B146_Rutuja_Jagtap_DevOps_Assignment_2_AWS_EC2.pdf](./123B1B146_Rutuja_Jagtap_DevOps_Assignment_2_AWS_EC2.pdf)
+- 📝 **Download Word Document (.docx):** [123B1B146_Rutuja_Jagtap_DevOps_Assignment_2_AWS_EC2.docx](./123B1B146_Rutuja_Jagtap_DevOps_Assignment_2_AWS_EC2.docx)
+- 📖 **Read Full Markdown Report:** [DevOps_Assignment_02_AWS_EC2_Report_Rutuja_Jagtap.md](./DevOps_Assignment_02_AWS_EC2_Report_Rutuja_Jagtap.md)
+
 ---
 
 ## 1. Aim
