@@ -1,0 +1,24 @@
+---
+- name: "Tier 1: Base Hardening & Common Packages"
+  hosts: production
+  gather_facts: yes
+  roles:
+    - common
+
+- name: "Tier 2: Deploy & Configure PostgreSQL Database"
+  hosts: dbservers
+  gather_facts: yes
+  roles:
+    - database
+
+- name: "Tier 3: Deploy Web Applications & Systemd Units"
+  hosts: webservers
+  gather_facts: yes
+  roles:
+    - webapp
+
+- name: "Tier 4: Deploy Nginx Reverse Proxy & Load Balancer"
+  hosts: loadbalancer
+  gather_facts: yes
+  roles:
+    - nginx_lb

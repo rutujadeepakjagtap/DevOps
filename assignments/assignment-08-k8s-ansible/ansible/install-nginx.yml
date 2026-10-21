@@ -1,0 +1,22 @@
+---
+- name: Configure Web Servers
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install Nginx Web Server
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Ensure Nginx Service is Started and Enabled
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Deploy Custom HTML Index Page
+      copy:
+        content: "<h1>DevOps Practical 8 - Automated via Ansible</h1><p>Student: Rutuja Deepak Jagtap (123B1B146) - PCCOE Pune</p>"
+        dest: /var/www/html/index.html
+        mode: '0644'

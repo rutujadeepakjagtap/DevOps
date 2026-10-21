@@ -1,0 +1,27 @@
+---
+- name: Install Nginx reverse proxy package
+  apt:
+    name: nginx
+    state: present
+    update_cache: yes
+
+- name: Deploy dynamic load balancer configuration from Jinja2 template
+  template:
+    src: lb.conf.j2
+    dest: /etc/nginx/conf.d/loadbalancer.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart_nginx
+
+- name: Ensure default site is disabled
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: restart_nginx
+
+- name: Ensure Nginx load balancer is started and enabled
+  systemd:
+    name: nginx
+    state: started
+    enabled: yes

@@ -1,0 +1,22 @@
+---
+- name: Install Python runtime and virtualenv
+  apt:
+    name:
+      - python3
+      - python3-pip
+      - python3-venv
+    state: present
+
+- name: Create application deploy directory
+  file:
+    path: /opt/webapp
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0755'
+
+- name: Ensure webapp systemd service is active
+  systemd:
+    name: webapp
+    state: started
+    enabled: yes

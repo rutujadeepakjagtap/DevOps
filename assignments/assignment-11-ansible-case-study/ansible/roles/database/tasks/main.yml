@@ -1,0 +1,30 @@
+---
+- name: Install PostgreSQL server and client libraries
+  apt:
+    name:
+      - postgresql
+      - postgresql-contrib
+      - python3-psycopg2
+    state: present
+    update_cache: yes
+
+- name: Ensure PostgreSQL service is started and enabled
+  systemd:
+    name: postgresql
+    state: started
+    enabled: yes
+
+- name: Create production application database
+  postgresql_db:
+    name: "{{ db_name | default('enterprise_app_db') }}"
+    state: present
+  become_user: postgres
+
+- name: Create production database application user
+  postgresql_user:
+    name: "{{ db_user | default('app_user') }}"
+    password: "{{ db_password | default('ProdDbSecurePass2026!') }}"
+    db: "{{ db_name | default('enterprise_app_db') }}"
+    priv: "ALL"
+    state: present
+  become_user: postgres

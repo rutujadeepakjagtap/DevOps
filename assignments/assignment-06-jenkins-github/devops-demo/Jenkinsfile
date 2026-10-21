@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+
+    environment {
+        PYTHON_VER = '3.10'
+        APP_NAME   = 'devops-demo'
+    }
+
+    stages {
+        stage('Checkout SCM') {
+            steps {
+                echo '=== Stage 1: Automated Source Code Checkout ==='
+                git branch: 'main',
+                    credentialsId: 'github-pat-rutuja',
+                    url: 'https://github.com/rutujadeepakjagtap/DevOps.git'
+            }
+        }
+
+        stage('Syntax Validation & Build') {
+            steps {
+                echo '=== Stage 2: Compiling & Syntax Validation ==='
+                bat 'python -m py_compile app.py'
+            }
+        }
+
+        stage('Automated Unit Testing') {
+            steps {
+                echo '=== Stage 3: Running Unit Test Suite ==='
+                bat 'python -m unittest test_app.py'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo '=== CI Pipeline Completed ==='
+            cleanWs()
+        }
+        success {
+            echo 'BUILD SUCCESSFUL: All tests passed and application verified.'
+        }
+        failure {
+            echo 'BUILD FAILED: Syntax error or failed unit test assertions.'
+        }
+    }
+}
