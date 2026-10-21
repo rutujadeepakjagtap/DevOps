@@ -15,7 +15,7 @@
 - **Department:** Department of Computer Engineering
 - **Academic Year:** 2026–2027
 - **AWS Account:** `Rutuja Jagtap (545432115022)`
-- **AWS Deployment Region:** Asia Pacific (Mumbai) `ap-south-1`
+- **AWS Deployment Region:** Asia Pacific (Mumbai) `ap-south-1` (AZ: `ap-south-1b`)
 - **Public GitHub Repository:** [https://github.com/rutujadeepakjagtap/DevOps](https://github.com/rutujadeepakjagtap/DevOps)
 
 ---
@@ -34,7 +34,7 @@ To study the architectural fundamentals of cloud computing and Amazon Web Servic
 1. To understand cloud computing models: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).
 2. To explore Amazon Web Services core ecosystem: Amazon EC2, Amazon S3, AWS Lambda, Amazon RDS, Elastic Load Balancing (ELB), and Amazon ECS.
 3. To study virtualization principles, hypervisors (Type 1 Bare-Metal vs Type 2 Hosted, and the AWS Nitro Hypervisor system).
-4. To configure network firewall policies using AWS Security Groups (SSH Port 22 and HTTP Port 80).
+4. To configure network firewall policies using AWS Security Groups (SSH Port 22 and HTTPS Port 443).
 5. To launch and verify a live running Linux virtual server (`My-DevOps-EC2`) in the Mumbai region (`ap-south-1b`).
 6. To monitor compute telemetry (CPU utilization, network traffic, system and instance health checks) using Amazon CloudWatch.
 7. To execute zero-cost termination and resource cleanup adhering to the AWS Free Tier.
@@ -47,67 +47,48 @@ To study the architectural fundamentals of cloud computing and Amazon Web Servic
 - **Virtual Machine Instance Type:** `t3.micro` (2 vCPUs, 1.0 GiB RAM - AWS Free Tier Eligible)
 - **Base Operating System:** Amazon Linux 2023 (AL2023) 64-bit (x86_64) Kernel
 - **Storage:** 8 GiB General Purpose SSD (gp3)
+- **VPC / Network:** Virtual Private Cloud `vpc-0e0a04b1273818ad2`
+- **Security Group:** `launch-wizard-1` (`sg-0671e3672a564981f`)
 - **Management Interfaces:** AWS Management Console, AWS CLI `v2.38.3`, Windows PowerShell
-- **Client System:** Windows 11 64-bit, AMD64 Architecture
 
 ---
 
-## 5. Theoretical Background
+## 5. Architectural Overview
 
-### 5.1 Cloud Computing & Service Delivery Models
-Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing. It replaces traditional on-premises capital expenditure (CapEx) with flexible operational expenditure (OpEx).
-
-| Service Model | Management Scope (User vs Provider) | AWS Service Examples |
-| :--- | :--- | :--- |
-| **IaaS (Infrastructure as a Service)** | User manages OS, runtime, middleware, data, and applications. AWS manages physical servers, storage, virtualization, and physical networking. | **Amazon EC2**, Amazon VPC, Amazon EBS |
-| **PaaS (Platform as a Service)** | User manages only code and data. AWS manages OS patching, runtime environments, scaling, and hardware. | AWS Elastic Beanstalk, AWS App Runner |
-| **SaaS (Software as a Service)** | Provider manages entire software stack; users consume via browser. | AWS WorkMail, QuickSight |
-
-### 5.2 Overview of Core AWS Services
-1. **Amazon EC2 (Elastic Compute Cloud):** Resizable virtual compute capacity in the cloud.
-2. **Amazon S3 (Simple Storage Service):** Highly scalable object storage with 99.999999999% (11 9's) durability.
-3. **AWS Lambda:** Serverless event-driven compute engine executing code in response to events without provisioning servers.
-4. **Amazon RDS (Relational Database Service):** Managed database service supporting PostgreSQL, MySQL, MariaDB, and Oracle.
-5. **Elastic Load Balancing (ELB):** Automatically distributes incoming application traffic across multiple EC2 targets.
-6. **Amazon ECS (Elastic Container Service):** Scalable container management service running Docker containers.
-
-### 5.3 Amazon EC2 Virtualization Architecture (AWS Nitro System)
-Modern Amazon EC2 instances (such as the `t3` family) run on the **AWS Nitro System**, an architecture that offloads virtualization functions (storage, networking, security, and management) from the CPU onto dedicated Nitro ASIC hardware cards. This leaves practically 100% of host CPU and memory available for user workloads.
-
-```
+```text
 +-------------------------------------------------------------------------------+
-| AWS Cloud (Region: ap-south-1 / Mumbai)                                            |
+|                      AWS Cloud (Region: ap-south-1 / Mumbai)                  |
 |                                                                               |
 |  +-------------------------------------------------------------------------+  |
-|  | Virtual Private Cloud (VPC: 172.31.0.0/16)                              |  |
+|  | VPC: vpc-0e0a04b1273818ad2 (CIDR: 172.31.0.0/16)                       |  |
 |  |                                                                         |  |
+|  |   Availability Zone: ap-south-1b                                        |  |
 |  |   +-------------------------------------------------------------------+ |  |
-|  |   | Public Subnet (ap-south-1b)                                       | |  |
-|  |   |                                                                   | |  |
-|  |   |   +------------------- Security Group ------------------------+   | |  |
-|  |   |   | Inbound Rules:                                            |   | |  |
-|  |   |   |   - Port 22 (SSH)  <- 0.0.0.0/0 (Admin Workstation)        |   | |  |
-|  |   |   |   - Port 80 (HTTP) <- 0.0.0.0/0 (Web Clients)             |   | |  |
-|  |   |   +-----------------------------------------------------------+   | |  |
-|  |   |                               |                                   | |  |
-|  |   |                               v                                   | |  |
-|  |   |              +----------------------------------+                 | |  |
-|  |   |              | Instance: My-DevOps-EC2          |                 | |  |
-|  |   |              | ID: i-0e2921adb9d8abd4b          |                 | |  |
-|  |   |              | Type: t3.micro (Free Tier)       |                 | |  |
-|  |   |              | IP: 3.109.154.173                |                 | |  |
-|  |   |              | State: Running                   |                 | |  |
-|  |   |              +----------------------------------+                 | |  |
-|  |   |                               |                                   | |  |
-|  |   |                               v                                   | |  |
-|  |   |              +----------------------------------+                 | |  |
-|  |   |              | Elastic Block Store (EBS)        |                 | |  |
-|  |   |              | Root Volume: 8 GiB gp3           |                 | |  |
-|  |   |              +----------------------------------+                 | |  |
+|  |   | Security Group: launch-wizard-1 (sg-0671e3672a564981f)            | |  |
+|  |   | Inbound Rules:                                                    | |  |
+|  |   |   - Port 22  (SSH)   <- Inbound Administration                    | |  |
+|  |   |   - Port 443 (HTTPS) <- Inbound Secure Web Clients                | |  |
+|  |   +-------------------------------------------------------------------+ |  |
+|  |                               |                                         |  |
+|  |                               v                                         |  |
+|  |              +----------------------------------+                       |  |
+|  |              | Instance: My-DevOps-EC2          |                       |  |
+|  |              | ID: i-0e2921adb9d8abd4b          |                       |  |
+|  |              | Type: t3.micro (Free Tier)       |                       |  |
+|  |              | Public IP: 3.109.154.173         |                       |  |
+|  |              | Private IP: 172.31.1.101         |                       |  |
+|  |              | State: Running                   |                       |  |
+|  |              +----------------------------------+                       |  |
+|  |                               |                                         |  |
+|  |                               v                                         |  |
+|  |              +----------------------------------+                       |  |
+|  |              | Elastic Block Store (EBS)        |                       |  |
+|  |              | Root Volume: 8 GiB gp3           |                       |  |
+|  |              +----------------------------------+                       |  |
 |  |   +-------------------------------------------------------------------+ |  |
 |  +-------------------------------------------------------------------------+  |
 |                                                                               |
-|  Telemetry: Amazon CloudWatch (CPUUtilization, NetworkIn/Out, Status Checks)  |
+|  Telemetry: Amazon CloudWatch (CPUUtilization, NetworkIn/Out, CreditBalance)  |
 +-------------------------------------------------------------------------------+
 ```
 
@@ -127,10 +108,18 @@ Modern Amazon EC2 instances (such as the `t3` family) run on the **AWS Nitro Sys
 4. **Instance Type:** `t3.micro` (2 vCPUs, 1 GiB RAM - Free Tier eligible).
 5. **Key Pair:** Configure RSA key pair or proceed without key pair for web demonstration.
 6. **Network Settings & Firewall (Security Group):**
-   - Create security group allowing **SSH (Port 22)**.
-   - Enable checkbox **Allow HTTP traffic from the internet (Port 80)**.
+   - Create security group `launch-wizard-1` (`sg-0671e3672a564981f`).
+   - Enable rules allowing **SSH (Port 22, TCP)** and **HTTPS (Port 443, TCP)**.
 7. **Storage:** 8 GiB gp3 root volume.
 8. Click **Launch Instance**.
+
+### Step 3: Monitor Telemetry in CloudWatch
+1. Select the instance `My-DevOps-EC2` (`i-0e2921adb9d8abd4b`).
+2. Switch to the **Monitoring** tab to review real-time CPU utilization (0.18%), Network traffic, and CPU credit accumulation.
+
+### Step 4: Resource Cleanup & Zero-Cost Deletion
+1. Select the running instance &rarr; choose **Instance state &rarr; Terminate instance**.
+2. Confirm termination to release all underlying compute and EBS resources, ensuring \$0.00 spend.
 
 ---
 
@@ -154,6 +143,33 @@ The AWS EC2 Instances Dashboard showing `My-DevOps-EC2` active and running in `a
 
 ---
 
+### Evidence 3: Detailed Instance Configuration & Network Endpoints
+The AWS EC2 Instance Details panel displaying comprehensive network, host, and state attributes:
+
+![AWS Instance Details](./screenshots/aws_03_instance_details.png)
+
+*Figure 3: Instance Summary panel for `i-0e2921adb9d8abd4b (My-DevOps-EC2)` showing Public IPv4 (`3.109.154.173`), Private IPv4 (`172.31.1.101`), Private DNS (`ip-172-31-1-101.ap-south-1.compute.internal`), and Public DNS hostname.*
+
+---
+
+### Evidence 4: Security Group Inbound Firewall Configuration
+The AWS Security Group panel verifying least-privilege network access rules:
+
+![AWS Security Group](./screenshots/aws_04_security_group_rules.png)
+
+*Figure 4: Security Group `launch-wizard-1` (`sg-0671e3672a564981f`) inbound rules showing active authorizations for SSH (Port 22, TCP) and HTTPS (Port 443, TCP) within VPC `vpc-0e0a04b1273818ad2`.*
+
+---
+
+### Evidence 5: Amazon CloudWatch Real-Time Telemetry Monitoring
+The CloudWatch metrics panel tracking compute workload, memory bursts, and network activity:
+
+![AWS CloudWatch Monitoring](./screenshots/aws_05_cloudwatch_monitoring.png)
+
+*Figure 5: Live CloudWatch telemetry graphs for `My-DevOps-EC2` displaying CPU Utilization (0.18%), Network In/Out bytes and packets (24 in / 21 out), and CPU Credit Balance (1.18).*
+
+---
+
 ## 8. Real Instance Observation Table
 
 | Parameter | Observed Live Value | Academic Specification |
@@ -167,7 +183,14 @@ The AWS EC2 Instances Dashboard showing `My-DevOps-EC2` active and running in `a
 | **Availability Zone** | `ap-south-1b` | Redundant Datacenter Zone |
 | **Public IPv4 DNS** | `ec2-3-109-154-173.ap-south-1.compute.amazonaws.com` | Resolved AWS Public DNS |
 | **Public IPv4 Address** | `3.109.154.173` | Accessible Internet Endpoint |
-| **Security Group Ports** | Port 22 (SSH), Port 80 (HTTP) | Least-Privilege Inbound Firewall |
+| **Private IPv4 Address** | `172.31.1.101` | Internal Subnet Private Address |
+| **Private IP DNS** | `ip-172-31-1-101.ap-south-1.compute.internal` | Internal Cloud DNS Hostname |
+| **Virtual Private Cloud (VPC)** | `vpc-0e0a04b1273818ad2` | Default Isolated Network Boundary |
+| **Security Group Name & ID** | `launch-wizard-1` (`sg-0671e3672a564981f`) | Stateful Virtual Firewall |
+| **Inbound Firewall Rules** | Port 22 (SSH / TCP), Port 443 (HTTPS / TCP) | Controlled Administrative & Web Access |
+| **CloudWatch CPU Utilization** | `0.18%` | Idle Compute Baseline |
+| **CloudWatch Credit Balance** | `1.18` (Accumulating) | Burstable Performance Credit Pool |
+| **CloudWatch Network Packets** | `24 Packets In / 21 Packets Out` | Active VPC Network Telemetry |
 | **Storage Architecture** | 8 GiB gp3 (EBS Block Storage) | Free Tier Allocation (<30 GiB) |
 | **Billing & Cost** | **$0.00** | 100% Free Tier Eligible |
 
@@ -176,10 +199,10 @@ The AWS EC2 Instances Dashboard showing `My-DevOps-EC2` active and running in `a
 ## 9. Telemetry Monitoring & Safe Resource Termination
 
 ### 9.1 Amazon CloudWatch Telemetry Metrics
-1. **CPUUtilization (%):** Tracks compute load across evaluation periods (baseline < 5%).
-2. **NetworkIn & NetworkOut (Bytes):** Quantifies inbound requests and outbound HTTP responses.
-3. **StatusCheckFailed_System:** Verifies AWS physical host infrastructure.
-4. **StatusCheckFailed_Instance:** Verifies guest OS reachability.
+1. **CPUUtilization (%):** Tracks compute load across evaluation periods (observed baseline 0.18%).
+2. **NetworkIn & NetworkOut (Bytes & Packets):** Quantifies inbound requests and outbound responses (observed 24 packets in, 21 packets out).
+3. **CPUCreditBalance:** Measures accumulated burst credits (observed 1.18 credits).
+4. **StatusCheckFailed_System & Instance:** Verifies physical AWS host and guest OS reachability.
 
 ### 9.2 Safe Termination Procedure (Zero-Cost Guarantee)
 To ensure zero ongoing charges:
@@ -210,9 +233,9 @@ To ensure zero ongoing charges:
 ---
 
 ## 11. Result
-An Amazon EC2 virtual machine instance named `My-DevOps-EC2` (`i-0e2921adb9d8abd4b`) was successfully created, configured with security group firewall rules, launched in the Mumbai region (`ap-south-1b`), verified in the `Running` state with public DNS `ec2-3-109-154-173.ap-south-1.compute.amazonaws.com`, and monitored under the AWS Free Tier.
+An Amazon EC2 virtual machine instance named `My-DevOps-EC2` (`i-0e2921adb9d8abd4b`) was successfully created, configured with security group `launch-wizard-1` (SSH 22 & HTTPS 443), launched in the Mumbai region (`ap-south-1b`), verified in the `Running` state with public DNS `ec2-3-109-154-173.ap-south-1.compute.amazonaws.com` and private IP `172.31.1.101`, and monitored under CloudWatch with zero charges under the AWS Free Tier.
 
 ---
 
 ## 12. Conclusion
-Through this practical assignment, comprehensive practical knowledge of cloud computing service models (IaaS/PaaS/SaaS), AWS core infrastructure services (EC2, S3, RDS, Lambda, ELB), virtualization with the AWS Nitro hypervisor, and virtual server lifecycle operations was acquired. The entire procedure was performed adhering to cloud cost-safety best practices.
+Through this practical assignment, comprehensive practical knowledge of cloud computing service models (IaaS/PaaS/SaaS), AWS core infrastructure services (EC2, S3, RDS, Lambda, ELB), virtualization with the AWS Nitro hypervisor, firewall management with Security Groups, and virtual server lifecycle operations was acquired. The entire procedure was performed adhering to cloud cost-safety best practices.
