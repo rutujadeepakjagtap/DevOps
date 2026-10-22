@@ -7,6 +7,7 @@
 [![Repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/rutujadeepakjagtap/DevOps)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![DevOps: All 11 Verified](https://img.shields.io/badge/DevOps%20Practicals-11%20of%2011%20Verified%20100%25-success)](https://github.com/rutujadeepakjagtap/DevOps)
+[![DevOps CI/CD Automated Verification](https://github.com/rutujadeepakjagtap/DevOps/actions/workflows/devops-ci.yml/badge.svg)](https://github.com/rutujadeepakjagtap/DevOps/actions/workflows/devops-ci.yml)
 
 ---
 
@@ -69,6 +70,32 @@ powershell -ExecutionPolicy Bypass -File scripts/run-assignment-09.ps1
 powershell -ExecutionPolicy Bypass -File scripts/run-assignment-10.ps1
 powershell -ExecutionPolicy Bypass -File scripts/run-assignment-11.ps1
 ```
+
+---
+
+
+---
+
+## ⚡ How to Run All 11 Assignments Directly in GitHub (Zero Local Setup)
+
+You can run, test, and verify all 11 assignments directly inside your browser on GitHub without installing anything on your laptop!
+
+### Option 1: 1-Click Automated Cloud Run (GitHub Actions CI/CD) — Easiest!
+1. Open your repository on GitHub: [github.com/rutujadeepakjagtap/DevOps](https://github.com/rutujadeepakjagtap/DevOps)
+2. Click on the **Actions** tab at the top.
+3. In the left sidebar, click **"DevOps Assignments 1-11 CI/CD Automated Verification"**.
+4. Click the blue **"Run workflow"** dropdown on the right &rarr; click the green **"Run workflow"** button.
+5. GitHub will spin up an isolated cloud runner, execute all 11 assignments, validate every artifact, and display an 11/11 Passed verification table!
+
+### Option 2: Live Interactive Browser Terminal (GitHub Codespaces)
+1. On the repository main page, click the green **`<> Code`** button.
+2. Select the **Codespaces** tab &rarr; click **"Create codespace on main"** (or press the **`.`** key on your keyboard).
+3. A full VS Code interface with a cloud Linux terminal opens inside your web browser.
+4. In the bottom terminal, execute:
+   ```bash
+   python scripts/run_all_tests.py
+   ```
+5. All 11 assignments will run and verify in under 15 seconds in the cloud!
 
 ---
 
