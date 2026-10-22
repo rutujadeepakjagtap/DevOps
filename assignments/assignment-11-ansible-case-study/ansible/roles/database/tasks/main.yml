@@ -15,13 +15,13 @@
     enabled: yes
 
 - name: Create production application database
-  postgresql_db:
+  community.postgresql.postgresql_db:
     name: "{{ db_name | default('enterprise_app_db') }}"
     state: present
   become_user: postgres
 
 - name: Create production database application user
-  postgresql_user:
+  community.postgresql.postgresql_user:
     name: "{{ db_user | default('app_user') }}"
     password: "{{ db_password | default('ProdDbSecurePass2026!') }}"
     db: "{{ db_name | default('enterprise_app_db') }}"

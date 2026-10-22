@@ -166,6 +166,8 @@ def test_asg_11():
     assert os.path.exists(site_yml), "site.yml missing"
     assert os.path.exists(inv), "inventory.ini missing"
     if shutil.which("ansible-playbook"):
+        if shutil.which("ansible-galaxy"):
+            subprocess.run(["ansible-galaxy", "collection", "install", "community.postgresql", "community.general"], capture_output=True, text=True)
         env = os.environ.copy()
         env["ANSIBLE_ROLES_PATH"] = os.path.join(asg_dir, "roles")
         subprocess.run(["ansible-playbook", "-i", inv, site_yml, "--syntax-check"], cwd=asg_dir, env=env, capture_output=True, text=True, check=True)

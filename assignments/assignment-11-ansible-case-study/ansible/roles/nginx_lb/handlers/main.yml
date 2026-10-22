@@ -1,0 +1,6 @@
+---
+# Handlers for Nginx Load Balancer Role
+- name: restart_nginx
+  systemd:
+    name: nginx
+    state: restarted
