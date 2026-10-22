@@ -25,7 +25,7 @@ jobs:
       - name: Install Python Dependencies & Test Frameworks
         run: |
           python -m pip install --upgrade pip
-          pip install pytest requests fpdf2 python-docx ansible-core
+          pip install pytest flask psycopg2-binary requests fpdf2 python-docx ansible-core
 
       - name: Setup HashiCorp Terraform
         uses: hashicorp/setup-terraform@v3

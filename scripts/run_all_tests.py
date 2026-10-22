@@ -35,10 +35,16 @@ def run_step(num_str, title, test_func):
         status = "Verified"
         print(f" \033[92m[PASS]\033[0m {num_str} - {title} ({duration:.2f}s)")
         results.append((num_str, title, "Verified", f"{duration:.2f}s", details))
+    except subprocess.CalledProcessError as e:
+        duration = time.time() - start
+        err_msg = e.stderr.strip() if e.stderr else (e.stdout.strip() if e.stdout else str(e))
+        err_short = err_msg.splitlines()[-1] if err_msg else str(e)
+        print(f" \033[91m[FAIL]\033[0m {num_str} - {title} (Error: {err_short})")
+        results.append((num_str, title, "Failed", f"{duration:.2f}s", err_short[:60]))
     except Exception as e:
         duration = time.time() - start
         print(f" \033[91m[FAIL]\033[0m {num_str} - {title} (Error: {e})")
-        results.append((num_str, title, "Failed", f"{duration:.2f}s", str(e)))
+        results.append((num_str, title, "Failed", f"{duration:.2f}s", str(e)[:60]))
 
 # ----------------- ASSIGNMENT TEST FUNCTIONS -----------------
 
@@ -53,7 +59,7 @@ def test_asg_02():
     # AWS Cloud Services & EC2
     asg_dir = os.path.join(REPO_ROOT, "assignments", "assignment-02-aws-cloud-ec2")
     script = os.path.join(asg_dir, "scripts", "aws_ec2_manager.py")
-    res = subprocess.run([sys.executable, script, "--simulate"], capture_output=True, text=True, check=True)
+    res = subprocess.run([sys.executable, script, "--simulate"], cwd=asg_dir, capture_output=True, text=True, check=True)
     assert "Simulation completed successfully" in res.stdout or "Instance" in res.stdout
     assert os.path.exists(os.path.join(asg_dir, "123B1B146_Rutuja_Jagtap_DevOps_Assignment_2_AWS_EC2.pdf")), "PDF report missing"
     assert os.path.exists(os.path.join(asg_dir, "123B1B146_Rutuja_Jagtap_DevOps_Assignment_2_AWS_EC2.docx")), "DOCX report missing"
@@ -80,7 +86,7 @@ def test_asg_04():
     asg_dir = os.path.join(REPO_ROOT, "assignments", "assignment-04-docker-python-app")
     app_dir = os.path.join(asg_dir, "app")
     assert os.path.exists(os.path.join(app_dir, "Dockerfile")), "Dockerfile missing"
-    res = subprocess.run([sys.executable, "-m", "pytest", os.path.join(app_dir, "test_app.py"), "-q"], capture_output=True, text=True, check=True)
+    subprocess.run([sys.executable, "-m", "pytest", "test_app.py", "-q"], cwd=app_dir, capture_output=True, text=True, check=True)
     return "Dockerfile present; Pytest passed all unit tests"
 
 def test_asg_05():
@@ -92,7 +98,7 @@ def test_asg_05():
         content = f.read()
         assert "db:" in content and "web:" in content, "Invalid compose services"
     app_dir = os.path.join(asg_dir, "app")
-    res = subprocess.run([sys.executable, "-m", "pytest", os.path.join(app_dir, "test_app.py"), "-q"], capture_output=True, text=True, check=True)
+    subprocess.run([sys.executable, "-m", "pytest", "test_app.py", "-q"], cwd=app_dir, capture_output=True, text=True, check=True)
     return "Multi-container compose topology and DB schema validated; Pytest passed"
 
 def test_asg_06():
@@ -103,7 +109,7 @@ def test_asg_06():
     with open(jenkinsfile, "r", encoding="utf-8") as f:
         j_content = f.read()
         assert "pipeline" in j_content and "Checkout SCM" in j_content, "Invalid Jenkinsfile pipeline"
-    res = subprocess.run([sys.executable, "-m", "pytest", os.path.join(asg_dir, "test_app.py"), "-q"], capture_output=True, text=True, check=True)
+    subprocess.run([sys.executable, "-m", "pytest", "test_app.py", "-q"], cwd=asg_dir, capture_output=True, text=True, check=True)
     return "Declarative Jenkinsfile pipeline verified; Automated unit test passed"
 
 def test_asg_07():
@@ -123,11 +129,12 @@ def test_asg_08():
     pod_yaml = os.path.join(asg_dir, "k8s", "pod.yaml")
     deploy_yaml = os.path.join(asg_dir, "k8s", "deployment.yaml")
     assert os.path.exists(pod_yaml) and os.path.exists(deploy_yaml), "K8s manifests missing"
-    ansible_pb = os.path.join(asg_dir, "ansible", "install-nginx.yml")
+    ansible_dir = os.path.join(asg_dir, "ansible")
+    ansible_pb = os.path.join(ansible_dir, "install-nginx.yml")
     assert os.path.exists(ansible_pb), "Ansible playbook missing"
     if shutil.which("ansible-playbook"):
-        inv = os.path.join(asg_dir, "ansible", "inventory.ini")
-        subprocess.run(["ansible-playbook", "-i", inv, ansible_pb, "--syntax-check"], capture_output=True, text=True, check=True)
+        inv = os.path.join(ansible_dir, "inventory.ini")
+        subprocess.run(["ansible-playbook", "-i", inv, ansible_pb, "--syntax-check"], cwd=ansible_dir, capture_output=True, text=True, check=True)
         return "Kubernetes Pod/Deployment manifests & Ansible playbook syntax verified"
     return "Kubernetes Pod/Deployment manifests and Ansible playbooks validated"
 
@@ -149,7 +156,7 @@ def test_asg_10():
     with open(svc_yaml, "r", encoding="utf-8") as f:
         content = f.read()
         assert "ClusterIP" in content and "NodePort" in content and "LoadBalancer" in content and "ExternalName" in content
-    return "All 4 Kubernetes service types (ClusterIP, NodePort, LoadBalancer, ExternalName) verified in 05-services.yaml"
+    return "All 4 Kubernetes service types (ClusterIP, NodePort, LoadBalancer, ExternalName) verified"
 
 def test_asg_11():
     # Ansible Multi-Tier Enterprise
@@ -159,7 +166,9 @@ def test_asg_11():
     assert os.path.exists(site_yml), "site.yml missing"
     assert os.path.exists(inv), "inventory.ini missing"
     if shutil.which("ansible-playbook"):
-        subprocess.run(["ansible-playbook", "-i", inv, site_yml, "--syntax-check"], capture_output=True, text=True, check=True)
+        env = os.environ.copy()
+        env["ANSIBLE_ROLES_PATH"] = os.path.join(asg_dir, "roles")
+        subprocess.run(["ansible-playbook", "-i", inv, site_yml, "--syntax-check"], cwd=asg_dir, env=env, capture_output=True, text=True, check=True)
         return "Multi-Tier Ansible case study (Web, App, DB roles) syntax verified"
     return "Enterprise Ansible multi-tier roles & playbooks verified"
 
